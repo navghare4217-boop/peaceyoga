@@ -3,7 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peace Yoga Academy | Classical Yoga Teacher Training by Krushna Tonde</title>
+<title>Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde</title>
+<meta name="description" content="Peace Yoga Academy offers Yoga Alliance USA certified 200-Hour Teacher Training and Pranayama Coach courses, taught by Master Krushna Tonde — classical yoga rooted in tradition, with a modern scientific approach.">
+<meta name="keywords" content="Peace Yoga Academy, Krushna Tonde, 200 hour yoga teacher training, pranayama coach course, yoga alliance USA, yoga teacher training India">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Peace Yoga Academy">
+<link rel="canonical" href="https://navghare4217-boop.github.io/peaceyoga/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde">
+<meta property="og:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach. Yoga Alliance USA certified courses by Master Krushna Tonde.">
+<meta property="og:url" content="https://navghare4217-boop.github.io/peaceyoga/">
+<meta property="og:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training">
+<meta name="twitter:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach.">
+<meta name="twitter:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Peace Yoga Academy",
+  "founder": { "@type": "Person", "name": "Krushna Tonde" },
+  "url": "https://navghare4217-boop.github.io/peaceyoga/",
+  "telephone": "+91-99222-08065",
+  "email": "info@peaceyogaacademy.com",
+  "address": { "@type": "PostalAddress", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+  "sameAs": []
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Spectral:ital@1&display=swap" rel="stylesheet">
@@ -290,6 +318,20 @@
   .cta-section h2{font-size:clamp(1.9rem,3.4vw,2.7rem); max-width:620px; margin:0 auto 20px;}
   .cta-section p{color:var(--ink-soft); max-width:480px; margin:0 auto 34px;}
 
+  .contact-form{
+    max-width:480px; margin:0 auto; text-align:left;
+    background:var(--sand); border:1px solid var(--line); padding:32px;
+  }
+  .cf-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .cf-field{margin-bottom:18px;}
+  .cf-field label{display:block; font-size:0.8rem; font-weight:600; color:var(--indigo); margin-bottom:6px; letter-spacing:0.02em;}
+  .cf-field input, .cf-field textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); background:var(--sand-light);
+    font-family:'Work Sans',sans-serif; font-size:0.92rem; color:var(--ink); border-radius:2px;
+  }
+  .cf-field input:focus, .cf-field textarea:focus{outline:2px solid var(--turmeric); outline-offset:1px; border-color:var(--turmeric);}
+  @media(max-width:480px){.cf-row{grid-template-columns:1fr;} .contact-form{padding:24px 20px;}}
+
   footer{background:var(--indigo-deep); color:rgba(239,230,211,0.65); padding:60px 0 30px;}
   .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:40px;}
   footer h4{color:var(--sand-light); font-size:0.95rem; margin-bottom:16px;}
@@ -302,8 +344,28 @@
   @media(max-width:760px){.footer-grid{grid-template-columns:1fr;}}
 
   @media(max-width:880px){
-    .nav-links{display:none;}
+    nav{padding:14px 20px;}
+    .nav-links{
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--sand-light); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{padding:16px 20px; border-bottom:1px solid var(--line); width:100%;}
     .nav-toggle{display:flex;}
+    .nav-cta{padding:9px 16px; font-size:0.78rem;}
+    .brand{font-size:1rem;}
+  }
+  @media(max-width:480px){
+    .wrap{padding:0 20px;}
+    section{padding:72px 0;}
+    .hero{padding-top:110px; min-height:auto; padding-bottom:60px;}
+    .hero h1{font-size:2rem;}
+    .hero-ctas a{width:100%; text-align:center;}
+    .founder-badges span{font-size:0.72rem;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .stat .num{font-size:1.7rem;}
   }
 </style>
 </head>
@@ -315,14 +377,19 @@
       <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg>
       Peace Yoga Academy
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#founder">Founder</a>
       <a href="#courses">Courses</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#faculty">Faculty</a>
     </div>
-    <a href="#contact" class="nav-cta">Enquire Now</a>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="nav-cta">Enquire Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -346,7 +413,7 @@
         <div class="breath-ring r3"></div>
         <div class="hero-photo">
           <div class="img-placeholder">
-            <svg viewBox="0 0 24 24" fill="https://drive.google.com/file/d/177xjEiE0O8Ik-u42cwIkgvKE4XIOnZ0t/view?usp=drive_link" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
             Photo of Krushna Tonde<br>replace with image from your Drive folder
           </div>
         </div>
@@ -569,7 +636,28 @@
       <p class="eyebrow">Contact Us</p>
       <h2>Begin your journey into classical yoga.</h2>
       <p>Write to us to know more about upcoming batches for the 200-Hour Teacher Training Course and the Pranayama Coach Course.</p>
-      <a href="mailto:info@peaceyogaacademy.com" class="btn-primary">Get in Touch</a>
+      <div class="hero-ctas" style="justify-content:center; margin-bottom:56px;">
+        <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="btn-primary">WhatsApp Us — +91 99222 08065</a>
+        <a href="mailto:info@peaceyogaacademy.com" class="btn-ghost">Get in Touch</a>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required placeholder="Your full name">
+          </div>
+          <div class="cf-field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="3" placeholder="Which course are you interested in?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send via WhatsApp</button>
+      </form>
     </div>
   </section>
 
@@ -610,7 +698,31 @@
 </footer>
 
 <script>
-  // mobile nav toggle placeholder (single page, anchors already work);
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // contact form -> sends via WhatsApp (no backend needed on GitHub Pages)
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('cf-name').value.trim();
+      const phone = document.getElementById('cf-phone').value.trim();
+      const msg = document.getElementById('cf-message').value.trim();
+      const text = `Hi, I'm ${name} (${phone}). ${msg}`;
+      const url = `https://wa.me/919922208065?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+  }
 </script>
 </body>
 </html>
