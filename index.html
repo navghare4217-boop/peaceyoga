@@ -439,7 +439,55 @@ font-size:22px;
   }
 </style>
 </head>
-<body>
+<script>
+
+const slider=document.querySelectorAll(".hero-slider img");
+
+let index=0;
+
+function showSlide(i){
+
+slider.forEach(s=>s.classList.remove("active"));
+
+slider[i].classList.add("active");
+
+}
+
+function nextSlide(){
+
+index++;
+
+if(index>=slider.length){
+
+index=0;
+
+}
+
+showSlide(index);
+
+}
+
+function prevSlide(){
+
+index--;
+
+if(index<0){
+
+index=slider.length-1;
+
+}
+
+showSlide(index);
+
+}
+
+document.getElementById("next").onclick=nextSlide;
+
+document.getElementById("prev").onclick=prevSlide;
+
+setInterval(nextSlide,3500);
+
+</script> <body>
 
 <header>
   <nav>
