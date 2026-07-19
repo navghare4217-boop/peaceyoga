@@ -290,6 +290,108 @@
     .breath-wrap{order:-1; max-width:280px; margin:0 auto 20px;}
   }
 
+  /* ---------- FULL-WIDTH HOME GALLERY ---------- */
+  .full-gallery-section{background:var(--sand-light); overflow:hidden;}
+  .full-gallery-section .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .gallery-count-tag{
+    font-size:0.82rem; color:var(--ink-soft); border:1px solid var(--line);
+    padding:8px 16px; border-radius:20px; white-space:nowrap;
+  }
+  .full-gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:150px;
+    gap:8px;
+    margin-top:44px;
+  }
+  .fg-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:4px;
+    cursor:pointer;
+    background:var(--sand);
+  }
+  .fg-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease, filter .5s ease;
+  }
+  .fg-item::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(16,26,46,0) 60%, rgba(16,26,46,0.55) 100%);
+    opacity:0; transition:opacity .35s ease;
+  }
+  .fg-item .fg-icon{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.7);
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(248,243,231,0.92); color:var(--indigo);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; opacity:0; transition:opacity .3s ease, transform .3s ease;
+    z-index:2;
+  }
+  .fg-item:hover img{transform:scale(1.08);}
+  .fg-item:hover::after{opacity:1;}
+  .fg-item:hover .fg-icon{opacity:1; transform:translate(-50%,-50%) scale(1);}
+  .fg-item:nth-child(6n+1){grid-column:span 2; grid-row:span 2;}
+  .fg-item:nth-child(11n+4){grid-column:span 2;}
+
+  .fg-more-btn-wrap{display:flex; justify-content:center; margin-top:36px;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(16,26,46,0.94);
+    display:none; align-items:center; justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox figure{
+    max-width:min(90vw, 980px); max-height:82vh; margin:0;
+    position:relative;
+  }
+  .lightbox img{
+    max-width:100%; max-height:82vh; object-fit:contain;
+    border-radius:4px; display:block; margin:0 auto;
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute; top:20px; right:24px;
+    width:42px; height:42px; border-radius:50%; border:none;
+    background:rgba(248,243,231,0.15); color:var(--sand-light);
+    font-size:20px; cursor:pointer; z-index:5;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(248,243,231,0.3);}
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:46px; height:46px; border-radius:50%; border:none;
+    background:rgba(248,243,231,0.15); color:var(--sand-light);
+    font-size:18px; cursor:pointer; z-index:5;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s;
+  }
+  .lightbox-nav:hover{background:rgba(248,243,231,0.3);}
+  .lightbox-prev{left:16px;}
+  .lightbox-next{right:16px;}
+  @media(max-width:760px){
+    .lightbox-prev{left:6px;} .lightbox-next{right:6px;}
+    .lightbox-nav{width:38px; height:38px; font-size:15px;}
+  }
+  .lightbox-caption{
+    position:absolute; bottom:-38px; left:0; right:0; text-align:center;
+    color:rgba(239,230,211,0.75); font-size:0.82rem; letter-spacing:0.02em;
+  }
+
+  @media(max-width:900px){
+    .full-gallery-grid{grid-template-columns:repeat(4,1fr); grid-auto-rows:120px;}
+  }
+  @media(max-width:560px){
+    .full-gallery-grid{grid-template-columns:repeat(3,1fr); grid-auto-rows:88px; gap:5px;}
+    .fg-item:nth-child(6n+1){grid-column:span 2; grid-row:span 2;}
+    .fg-item:nth-child(11n+4){grid-column:span 1;}
+  }
+
   /* ---------- SECTION SHELL ---------- */
   section{padding:110px 0;}
   .section-head{max-width:640px; margin-bottom:56px;}
@@ -497,6 +599,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#founder">Founder</a>
+      <a href="#gallery">Gallery</a>
       <a href="#courses">Courses</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#faculty">Faculty</a>
@@ -574,6 +677,61 @@
       </div>
     </div>
   </section>
+
+  <!-- FULL-WIDTH GALLERY -->
+  <section class="full-gallery-section" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>Moments from the mat.</h2>
+        </div>
+        <span class="gallery-count-tag">28 photos · tap any to view full page</span>
+      </div>
+
+      <div class="full-gallery-grid" id="fullGalleryGrid">
+        <div class="fg-item" data-index="0"><img src="images/1 (1).jpeg" alt="Peace Yoga Academy gallery photo 1" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="1"><img src="images/1 (2).jpeg" alt="Peace Yoga Academy gallery photo 2" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="2"><img src="images/1 (3).jpeg" alt="Peace Yoga Academy gallery photo 3" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="3"><img src="images/1 (4).jpeg" alt="Peace Yoga Academy gallery photo 4" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="4"><img src="images/1 (5).jpeg" alt="Peace Yoga Academy gallery photo 5" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="5"><img src="images/1 (6).jpeg" alt="Peace Yoga Academy gallery photo 6" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="6"><img src="images/1 (7).jpeg" alt="Peace Yoga Academy gallery photo 7" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="7"><img src="images/1 (9).jpeg" alt="Peace Yoga Academy gallery photo 9" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="8"><img src="images/1 (10).jpeg" alt="Peace Yoga Academy gallery photo 10" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="9"><img src="images/1 (11).jpeg" alt="Peace Yoga Academy gallery photo 11" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="10"><img src="images/1 (12).jpeg" alt="Peace Yoga Academy gallery photo 12" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="11"><img src="images/1 (13).jpeg" alt="Peace Yoga Academy gallery photo 13" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="12"><img src="images/1 (14).jpeg" alt="Peace Yoga Academy gallery photo 14" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="13"><img src="images/1 (15).jpeg" alt="Peace Yoga Academy gallery photo 15" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="14"><img src="images/1 (16).jpeg" alt="Peace Yoga Academy gallery photo 16" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="15"><img src="images/1 (17).jpeg" alt="Peace Yoga Academy gallery photo 17" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="16"><img src="images/1 (18).jpeg" alt="Peace Yoga Academy gallery photo 18" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="17"><img src="images/1 (19).jpeg" alt="Peace Yoga Academy gallery photo 19" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="18"><img src="images/1 (20).jpeg" alt="Peace Yoga Academy gallery photo 20" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="19"><img src="images/1 (21).jpeg" alt="Peace Yoga Academy gallery photo 21" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="20"><img src="images/1 (22).jpeg" alt="Peace Yoga Academy gallery photo 22" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="21"><img src="images/1 (23).jpeg" alt="Peace Yoga Academy gallery photo 23" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="22"><img src="images/1 (25).jpeg" alt="Peace Yoga Academy gallery photo 25" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="23"><img src="images/1 (26).jpeg" alt="Peace Yoga Academy gallery photo 26" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="24"><img src="images/1 (27).jpeg" alt="Peace Yoga Academy gallery photo 27" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="25"><img src="images/222.jpeg" alt="Peace Yoga Academy event photo" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="26"><img src="images/home.jpeg" alt="Peace Yoga Academy home photo" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="27"><img src="images/Prof. shushila maam.png" alt="Prof. Sushila Banswal" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-PAGE LIGHTBOX VIEWER -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full page image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <figure>
+      <img id="lightboxImg" src="" alt="">
+      <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+  </div>
 
   <!-- ABOUT -->
   <section class="about-section" id="about">
@@ -984,6 +1142,86 @@
 
     render();
     startAuto();
+  })();
+
+  /* =========================================================
+     FULL-WIDTH GALLERY -> FULL PAGE LIGHTBOX VIEWER
+     - click any thumbnail to open the image full page
+     - prev/next, keyboard arrows, Escape to close
+     - click backdrop to close, body scroll locked while open
+  ========================================================== */
+  (function () {
+    const grid = document.getElementById('fullGalleryGrid');
+    if (!grid) return;
+
+    const items = Array.from(grid.querySelectorAll('.fg-item'));
+    const photos = items.map(it => ({
+      src: it.querySelector('img').getAttribute('src'),
+      alt: it.querySelector('img').getAttribute('alt')
+    }));
+
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCaption = document.getElementById('lightboxCaption');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+
+    let idx = 0;
+
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      lbImg.src = photos[idx].src;
+      lbImg.alt = photos[idx].alt;
+      lbCaption.textContent = (idx + 1) + ' of ' + photos.length;
+    }
+
+    function open(i) {
+      show(i);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function close() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => open(i));
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'View ' + photos[i].alt + ' full page');
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+      });
+    });
+
+    lbClose.addEventListener('click', close);
+    lbNext.addEventListener('click', () => show(idx + 1));
+    lbPrev.addEventListener('click', () => show(idx - 1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+
+    // swipe support inside lightbox
+    let lbTouchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      lbTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = lbTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) diff > 0 ? show(idx + 1) : show(idx - 1);
+    }, { passive: true });
   })();
 </script>
 </body>
