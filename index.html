@@ -1,2195 +1,1187 @@
-ChatGPT
-
-
-
-
-
-
-Today 9:18 PM
-gothub ko godady domin link karana hai setp
-
-Agar aapne GitHub Pages par website host ki hai aur usko GoDaddy domain se connect karna hai, to ye steps follow karein:
-
-1. GitHub Pages enable karein
-GitHub repository open karein.
-
-Settings → Pages
-
-Source select karein (main branch / root).
-
-Website URL generate ho jayega.
-
-2. Custom Domain add karein
-GitHub Settings → Pages
-
-Custom domain me apna domain likhein.
-
-Example: www.example.com
-
-Save karein.
-
-Agar available ho to Enforce HTTPS baad me enable karein (DNS propagate hone ke baad).
-
-3. GoDaddy DNS me records add karein
-Agar www use karna hai:
-
-Type	Host	Value
-CNAME	www	yourusername.github.io
-yourusername ki jagah apna GitHub username likhein.
-
-Agar root domain (example.com) bhi chalana hai:
-
-Type	Host	Value
-A	@	185.199.108.153
-A	@	185.199.109.153
-A	@	185.199.110.153
-A	@	185.199.111.153
-4. Domain Forwarding (Optional)
-Agar example.com ko www.example.com par redirect karna chahte hain, to GoDaddy me forwarding set kar sakte hain.
-
-5. Wait
-DNS update hone me 10 minute se 24 ghante (kabhi-kabhi 48 ghante) lag sakte hain.
-
-Phir GitHub Pages me HTTPS automatically enable ho jayega.
-
-Agar aapki website ka domain bata dein:
-GoDaddy domain: ________
-
-GitHub username: ________
-
-Repository name: ________
-
-To main aapko exact DNS records aur settings bata dunga.
-
-
-Agar GitHub website ke liye online image hosting chahiye jisse direct image URL mile aur gallery bana sako, to ye options sabse achhe hain:
-
-1. GitHub Repository (⭐⭐⭐⭐⭐ Recommended)
-images folder bana do.
-
-Saari images upload karo.
-
-URL use karo:
-
-https://yourdomain.com/images/photo1.jpg
-Ya agar custom domain nahi hai:
-
-https://username.github.io/repository/images/photo1.jpg
-Best hai kyunki website aur images ek hi jagah rahengi.
-
-2. Cloudinary (⭐⭐⭐⭐⭐ Best for Gallery)
-Free plan.
-
-Image optimize karta hai.
-
-Direct image URL milta hai.
-
-Gallery ke liye bahut accha.
-
-Example:
-
-https://res.cloudinary.com/your-cloud/image/upload/photo.jpg
-3. Imgur (⭐⭐⭐)
-Jaldi upload ho jata hai.
-
-Direct link mil jata hai.
-
-Professional website ke liye recommended nahi.
-
-4. Firebase Storage (⭐⭐⭐⭐)
-Google ka storage.
-
-Fast aur reliable.
-
-Direct download URL milta hai.
-
-Meri recommendation
-Agar aap GitHub Pages website bana rahe hain, to:
-
-100–500 images hain → GitHub images folder me rakho.
-
-1000+ images, gallery, optimization chahiye → Cloudinary use karo.
-
-Agar aap Peace Yoga Academy website bana rahe hain, to main aapke liye:
-
-Responsive gallery
-
-Lightbox (image click karke bada dekhna)
-
-Lazy loading
-
-Category filter (Yoga, Events, Classes)
-
-sab HTML/CSS/JavaScript me bana sakta hoon.
-
-
-girhub me imges flgder me rahi ag galary aise banaru
-
-Haan, GitHub me images folder rakhkar gallery banana bilkul sahi tarika hai.
-
-Aapka structure kuch is tarah ho:
-
-website/
-│── index.html
-│── gallery.html
-│── css/
-│── js/
-└── images/
-    ├── yoga1.jpg
-    ├── yoga2.jpg
-    ├── yoga3.jpg
-    ├── event1.jpg
-    ├── event2.jpg
-    └── ...
-Gallery page me images ko is tarah use karein:
-
-<div class="gallery">
-  <img src="images/yoga1.jpg" alt="Yoga 1">
-  <img src="images/yoga2.jpg" alt="Yoga 2">
-  <img src="images/yoga3.jpg" alt="Yoga 3">
-  <img src="images/event1.jpg" alt="Event 1">
-</div>
-CSS:
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-}
-Agar bahut saari images (100+ ya 500+) hain
-To har image ko manually HTML me likhna mushkil hoga. Iske liye:
-
-JavaScript se image list load kar sakte hain (agar list maintain karein), ya
-
-Gallery generator bana sakte hain jo sirf image names ki array se poori gallery bana de.
-
-Main aapke liye click karke full-size image khulne wali (Lightbox) aur auto-generated gallery bhi bana sakta hoon, jisme sirf image ka naam add karna padega, HTML baar-baar edit nahi karna padega.
-
-
-"D:\peace yoga\images\1 (1).jpeg"
-"D:\peace yoga\images\1 (2).jpeg"
-"D:\peace yoga\images\1 (3).jpeg"
-"D:\peace yoga\images\1 (4).jpeg"
-"D:\peace yoga\images\1 (5).jpeg"
-"D:\peace yoga\images\1 (6).jpeg"
-"D:\peace yoga\images\1 (7).jpeg"
-"D:\peace yoga\images\1 (9).jpeg"
-"D:\peace yoga\images\1 (10).jpeg"
-"D:\peace yoga\images\1 (11).jpeg"
-"D:\peace yoga\images\1 (12).jpeg"
-"D:\peace yoga\images\1 (13).jpeg"
-"D:\peace yoga\images\1 (14).jpeg"
-"D:\peace yoga\images\1 (15).jpeg"
-"D:\peace yoga\images\1 (16).jpeg"
-"D:\peace yoga\images\1 (17).jpeg"
-"D:\peace yoga\images\1 (18).jpeg"
-"D:\peace yoga\images\1 (19).jpeg"
-"D:\peace yoga\images\1 (20).jpeg"
-"D:\peace yoga\images\1 (21).jpeg"
-"D:\peace yoga\images\1 (22).jpeg"
-"D:\peace yoga\images\1 (23).jpeg"
-"D:\peace yoga\images\1 (25).jpeg"
-"D:\peace yoga\images\1 (26).jpeg"
-"D:\peace yoga\images\1 (27).jpeg"
-"D:\peace yoga\images\222.jpeg"
-"D:\peace yoga\images\home.jpeg"
-"D:\peace yoga\images\Prof. shushila maam.png" ye sab images hai https://github.com/navghare4217-boop/peaceyoga/tree/main/images\ ye path 
-
-Agar ye images GitHub repository ke images folder me upload hain, to local Windows path (D:\peace yoga\images\...) use nahi hoga. Website me relative path use karna hoga.
-
-Agar structure aisa hai:
-
-peaceyoga/
-├── index.html
-├── gallery.html
-└── images/
-    ├── 1 (1).jpeg
-    ├── 1 (2).jpeg
-    ├── ...
-    ├── 222.jpeg
-    ├── home.jpeg
-    └── Prof. shushila maam.png
-To HTML me:
-
-<div class="gallery">
-  <img src="images/1 (1).jpeg" alt="Yoga Image 1">
-  <img src="images/1 (2).jpeg" alt="Yoga Image 2">
-  <img src="images/1 (3).jpeg" alt="Yoga Image 3">
-  <img src="images/1 (4).jpeg" alt="Yoga Image 4">
-  <img src="images/1 (5).jpeg" alt="Yoga Image 5">
-  <img src="images/1 (6).jpeg" alt="Yoga Image 6">
-  <!-- Aur isi tarah baaki images -->
-</div>
-Ek zaroori salah
-Aapke file names me spaces aur brackets hain, jaise:
-
-1 (1).jpeg
-
-Prof. shushila maam.png
-
-Ye technically chal sakte hain, lekin web projects me problems create kar sakte hain.
-
-Inhe rename karna behtar rahega:
-
-1-1.jpeg
-1-2.jpeg
-1-3.jpeg
-...
-222.jpeg
-home.jpeg
-prof-shushila-maam.png
-Isse links simple ho jayenge:
-
-<img src="images/1-1.jpeg">
-<img src="images/prof-shushila-maam.png">
-Main aapke liye poori gallery bana sakta hoon
-✅ Responsive grid
-
-✅ Image par click karne par full-screen lightbox
-
-✅ Mobile-friendly
-
-✅ Modern hover effect
-
-✅ Aapki sabhi images automatically include
-
-Bas ek baat confirm kar dijiye:
-
-Kya aap GitHub repository me images ko rename kar sakte hain (1-1.jpeg, 1-2.jpeg...), ya wahi existing names rakhna chahte hain?
-
-
-pure images ka ful galary code do hithub ke liye
-
-Haan. Agar images images folder me hain, to neeche diya gaya code GitHub Pages par chalega.
-
-Note: Aapke filenames me spaces aur brackets hain (1 (1).jpeg), isliye maine unhe double quotes ke andar rakha hai.
-
-gallery.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peace Yoga Academy Gallery</title>
-
+<title>Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde</title>
+<meta name="description" content="Peace Yoga Academy offers Yoga Alliance USA certified 200-Hour Teacher Training and Pranayama Coach courses, taught by Master Krushna Tonde — classical yoga rooted in tradition, with a modern scientific approach.">
+<meta name="keywords" content="Peace Yoga Academy, Krushna Tonde, 200 hour yoga teacher training, pranayama coach course, yoga alliance USA, yoga teacher training India">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Peace Yoga Academy">
+<link rel="canonical" href="https://navghare4217-boop.github.io/peaceyoga/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde">
+<meta property="og:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach. Yoga Alliance USA certified courses by Master Krushna Tonde.">
+<meta property="og:url" content="https://navghare4217-boop.github.io/peaceyoga/">
+<meta property="og:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training">
+<meta name="twitter:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach.">
+<meta name="twitter:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Peace Yoga Academy",
+  "founder": { "@type": "Person", "name": "Krushna Tonde" },
+  "url": "https://navghare4217-boop.github.io/peaceyoga/",
+  "telephone": "+91-99222-08065",
+  "email": "info@peaceyogaacademy.com",
+  "address": { "@type": "PostalAddress", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Spectral:ital@1&display=swap" rel="stylesheet">
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+  :root{
+    --indigo:#1B2A45;
+    --indigo-deep:#101A2E;
+    --turmeric:#C6892E;
+    --turmeric-soft:#E0AA5C;
+    --sand:#EFE6D3;
+    --sand-light:#F8F3E7;
+    --maroon:#7A3B2E;
+    --sage:#6E7A5C;
+    --ink:#20211D;
+    --ink-soft:#4A4A43;
+    --line: rgba(32,33,29,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--sand-light);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--indigo);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    color:var(--turmeric);
+    font-weight:600;
+  }
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+  :focus-visible{outline:2px solid var(--turmeric); outline-offset:3px;}
 
-body{
-    background:#f7f7f7;
-}
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(248,243,231,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1140px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color:var(--indigo);}
+  .brand svg{width:30px; height:30px;}
+  .nav-links{display:flex; gap:32px; font-size:0.92rem; font-weight:500;}
+  .nav-links a{position:relative; padding:4px 0; color:var(--ink-soft); transition:color .25s;}
+  .nav-links a:hover{color:var(--turmeric);}
+  .nav-cta{
+    background:var(--indigo); color:var(--sand-light); padding:10px 22px;
+    border-radius:2px; font-size:0.85rem; font-weight:600; letter-spacing:0.03em;
+    transition:background .25s;
+  }
+  .nav-cta:hover{background:var(--turmeric); color:var(--indigo-deep);}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .nav-toggle span{width:24px; height:2px; background:var(--indigo);}
 
-h1{
-    text-align:center;
-    padding:30px 10px;
-    color:#2c3e50;
-}
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center;
+    padding:140px 0 80px;
+    background:
+      radial-gradient(ellipse at 78% 20%, rgba(198,137,46,0.16), transparent 55%),
+      linear-gradient(180deg, var(--sand-light) 0%, var(--sand) 100%);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
+  }
+  .hero .eyebrow{margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
+    line-height:1.08;
+    margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic; color:var(--turmeric); font-weight:500;}
+  .hero p.lead{
+    font-size:1.08rem; color:var(--ink-soft); max-width:480px; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--indigo); color:var(--sand-light); padding:15px 30px;
+    font-weight:600; font-size:0.92rem; letter-spacing:0.02em; border-radius:2px;
+    transition:transform .25s, background .25s; display:inline-block;
+  }
+  .btn-primary:hover{background:var(--maroon); transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--indigo); color:var(--indigo); padding:14px 28px;
+    font-weight:600; font-size:0.92rem; border-radius:2px; transition:.25s;
+  }
+  .btn-ghost:hover{background:var(--indigo); color:var(--sand-light);}
 
-.gallery{
-    max-width:1300px;
-    margin:auto;
-    padding:20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.gallery img{
+  /* ---------- RESPONSIVE HERO GALLERY (fully rebuilt) ---------- */
+  .hero-gallery{
+    position:relative;
     width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:12px;
-    cursor:pointer;
-    transition:.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-.lightbox{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-.lightbox img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
-}
-
-.close{
+    aspect-ratio:4/5;
+    max-height:720px;
+    border-radius:8px;
+    overflow:hidden;
+    background:var(--indigo-deep);
+    box-shadow:0 30px 60px -20px rgba(16,26,46,0.35);
+    isolation:isolate;
+  }
+  .hero-gallery .slides{
+    position:relative;
+    width:100%;
+    height:100%;
+  }
+  .hero-gallery .slide{
     position:absolute;
-    top:20px;
-    right:30px;
-    font-size:40px;
-    color:#fff;
+    inset:0;
+    opacity:0;
+    transform:scale(1.04);
+    transition:opacity 1s ease, transform 6s ease;
+    will-change:opacity, transform;
+  }
+  .hero-gallery .slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+  .hero-gallery .slide.active{
+    opacity:1;
+    transform:scale(1);
+    z-index:1;
+  }
+  .hero-gallery::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(16,26,46,0) 55%, rgba(16,26,46,0.55) 100%);
+    pointer-events:none;
+    z-index:2;
+  }
+  .gallery-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:38px; height:38px;
+    border:none;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(248,243,231,0.85);
+    color:var(--indigo);
+    backdrop-filter:blur(6px);
+    font-size:16px;
+    line-height:1;
     cursor:pointer;
-}
-</style>
+    border-radius:50%;
+    z-index:5;
+    transition:background .2s, transform .2s;
+  }
+  .gallery-btn:hover{background:var(--turmeric); color:var(--indigo-deep);}
+  .gallery-btn:active{transform:translateY(-50%) scale(0.92);}
+  .gallery-prev{left:12px;}
+  .gallery-next{right:12px;}
+  .gallery-dots{
+    position:absolute;
+    left:0; right:0; bottom:14px;
+    display:flex; justify-content:center; align-items:center; gap:6px;
+    z-index:5;
+    padding:0 40px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .gallery-dots::-webkit-scrollbar{display:none;}
+  .gallery-dots button{
+    flex:0 0 auto;
+    width:7px; height:7px;
+    border-radius:50%;
+    border:none;
+    background:rgba(248,243,231,0.45);
+    cursor:pointer;
+    padding:0;
+    transition:background .2s, width .2s;
+  }
+  .gallery-dots button.active{
+    background:var(--turmeric-soft);
+    width:20px;
+    border-radius:4px;
+  }
+  .gallery-counter{
+    position:absolute;
+    top:14px; right:14px;
+    z-index:5;
+    background:rgba(16,26,46,0.55);
+    color:var(--sand-light);
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    padding:5px 10px;
+    border-radius:20px;
+    backdrop-filter:blur(4px);
+  }
+  @media(hover:hover){
+    .hero-gallery:hover .slide.active{transform:scale(1.02);}
+  }
+  @media(max-width:880px){
+    .hero-gallery{aspect-ratio:4/3; max-height:420px; border-radius:6px;}
+  }
+  @media(max-width:480px){
+    .hero-gallery{aspect-ratio:1/1; max-height:340px;}
+    .gallery-btn{width:32px; height:32px; font-size:14px;}
+    .gallery-counter{font-size:0.66rem; padding:4px 8px;}
+  }
 
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr; text-align:left;}
+    .hero-gallery{order:-1; margin:0 auto 20px;}
+  }
+
+  /* ---------- FULL-WIDTH HOME GALLERY ---------- */
+  .full-gallery-section{background:var(--sand-light); overflow:hidden;}
+  .full-gallery-section .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .gallery-count-tag{
+    font-size:0.82rem; color:var(--ink-soft); border:1px solid var(--line);
+    padding:8px 16px; border-radius:20px; white-space:nowrap;
+  }
+  .full-gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:150px;
+    gap:8px;
+    margin-top:44px;
+  }
+  .fg-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:4px;
+    cursor:pointer;
+    background:var(--sand);
+  }
+  .fg-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease, filter .5s ease;
+  }
+  .fg-item::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(16,26,46,0) 60%, rgba(16,26,46,0.55) 100%);
+    opacity:0; transition:opacity .35s ease;
+  }
+  .fg-item .fg-icon{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.7);
+    width:36px; height:36px; border-radius:50%;
+    background:rgba(248,243,231,0.92); color:var(--indigo);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; opacity:0; transition:opacity .3s ease, transform .3s ease;
+    z-index:2;
+  }
+  .fg-item:hover img{transform:scale(1.08);}
+  .fg-item:hover::after{opacity:1;}
+  .fg-item:hover .fg-icon{opacity:1; transform:translate(-50%,-50%) scale(1);}
+  .fg-item:nth-child(6n+1){grid-column:span 2; grid-row:span 2;}
+  .fg-item:nth-child(11n+4){grid-column:span 2;}
+
+  .fg-more-btn-wrap{display:flex; justify-content:center; margin-top:36px;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(16,26,46,0.94);
+    display:none; align-items:center; justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox figure{
+    max-width:min(90vw, 980px); max-height:82vh; margin:0;
+    position:relative;
+  }
+  .lightbox img{
+    max-width:100%; max-height:82vh; object-fit:contain;
+    border-radius:4px; display:block; margin:0 auto;
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute; top:20px; right:24px;
+    width:42px; height:42px; border-radius:50%; border:none;
+    background:rgba(248,243,231,0.15); color:var(--sand-light);
+    font-size:20px; cursor:pointer; z-index:5;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(248,243,231,0.3);}
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:46px; height:46px; border-radius:50%; border:none;
+    background:rgba(248,243,231,0.15); color:var(--sand-light);
+    font-size:18px; cursor:pointer; z-index:5;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s;
+  }
+  .lightbox-nav:hover{background:rgba(248,243,231,0.3);}
+  .lightbox-prev{left:16px;}
+  .lightbox-next{right:16px;}
+  @media(max-width:760px){
+    .lightbox-prev{left:6px;} .lightbox-next{right:6px;}
+    .lightbox-nav{width:38px; height:38px; font-size:15px;}
+  }
+  .lightbox-caption{
+    position:absolute; bottom:-38px; left:0; right:0; text-align:center;
+    color:rgba(239,230,211,0.75); font-size:0.82rem; letter-spacing:0.02em;
+  }
+
+  @media(max-width:900px){
+    .full-gallery-grid{grid-template-columns:repeat(4,1fr); grid-auto-rows:120px;}
+  }
+  @media(max-width:560px){
+    .full-gallery-grid{grid-template-columns:repeat(3,1fr); grid-auto-rows:88px; gap:5px;}
+    .fg-item:nth-child(6n+1){grid-column:span 2; grid-row:span 2;}
+    .fg-item:nth-child(11n+4){grid-column:span 1;}
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:110px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.15;}
+  .rule{width:52px; height:2px; background:var(--turmeric); margin:22px 0;}
+
+  /* ---------- ABOUT ---------- */
+  .about-section{background:var(--sand-light);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:flex-start;}
+  .about-grid p{color:var(--ink-soft); margin-bottom:18px; font-size:1.02rem;}
+  .about-figure{
+    aspect-ratio:4/5; border-radius:2px; overflow:hidden;
+  }
+  @media(max-width:880px){.about-grid{grid-template-columns:1fr;} .about-figure{order:-1; max-width:340px;}}
+
+  /* ---------- FOUNDER ---------- */
+  .founder-section{
+    background:var(--indigo);
+    color:var(--sand-light);
+  }
+  .founder-section h2, .founder-section h3, .founder-section h4{color:var(--sand-light);}
+  .founder-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:flex-start;}
+  .founder-photo{aspect-ratio:4/5; border-radius:2px; overflow:hidden; position:sticky; top:110px;}
+  .founder-grid p{color:rgba(239,230,211,0.82); margin-bottom:18px;}
+  .founder-badges{display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 8px;}
+  .founder-badges span{
+    border:1px solid rgba(224,170,92,0.5); color:var(--turmeric-soft);
+    padding:7px 14px; font-size:0.78rem; letter-spacing:0.03em; border-radius:2px;
+  }
+  .quali-list{list-style:none; margin-top:8px;}
+  .quali-list li{
+    padding:12px 0; border-bottom:1px solid rgba(239,230,211,0.15);
+    display:flex; gap:12px; color:rgba(239,230,211,0.88); font-size:0.96rem;
+  }
+  .quali-list li::before{content:"◆"; color:var(--turmeric); font-size:0.6rem; margin-top:6px;}
+  @media(max-width:880px){.founder-grid{grid-template-columns:1fr;} .founder-photo{position:static; max-width:300px;}}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline-section{background:var(--sand);}
+  .timeline{position:relative; margin-top:20px;}
+  .timeline::before{
+    content:""; position:absolute; left:64px; top:8px; bottom:8px; width:1px;
+    background:var(--line);
+  }
+  .t-item{display:grid; grid-template-columns:120px 1fr; gap:20px; padding:26px 0; position:relative;}
+  .t-item .year{
+    font-family:'Fraunces',serif; font-size:1.5rem; color:var(--turmeric); font-weight:500;
+    text-align:right; padding-right:32px; position:relative;
+  }
+  .t-item .year::after{
+    content:""; position:absolute; right:-5px; top:12px; width:9px; height:9px; border-radius:50%;
+    background:var(--turmeric); border:3px solid var(--sand);
+  }
+  .t-item p{color:var(--ink-soft); max-width:560px; padding-left:8px;}
+  @media(max-width:640px){
+    .timeline::before{left:38px;}
+    .t-item{grid-template-columns:70px 1fr;}
+    .t-item .year{font-size:1.1rem; padding-right:14px;}
+    .t-item .year::after{right:-9px;}
+  }
+
+  /* ---------- STATS ---------- */
+  .stats-row{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); margin-top:60px;
+  }
+  .stat{background:var(--sand-light); padding:34px 24px; text-align:center;}
+  .stat .num{font-family:'Fraunces',serif; font-size:2.2rem; color:var(--maroon); font-weight:500;}
+  .stat .label{font-size:0.82rem; color:var(--ink-soft); margin-top:6px; letter-spacing:0.02em;}
+  @media(max-width:700px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- COURSES ---------- */
+  .courses-section{background:var(--sand-light);}
+  .course-cards{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .course-card{
+    background:var(--sand); border:1px solid var(--line); padding:40px 34px;
+    transition:transform .3s, box-shadow .3s;
+  }
+  .course-card:hover{transform:translateY(-6px); box-shadow:0 24px 40px -24px rgba(32,33,29,0.25);}
+  .course-card .eyebrow{color:var(--maroon);}
+  .course-card h3{font-size:1.5rem; margin:12px 0 14px;}
+  .course-card p{color:var(--ink-soft); margin-bottom:22px;}
+  .course-card a{font-weight:600; font-size:0.88rem; color:var(--indigo); border-bottom:1px solid var(--turmeric); padding-bottom:2px;}
+  @media(max-width:760px){.course-cards{grid-template-columns:1fr;}}
+
+  /* ---------- TWO COLUMN LIST SECTION (What you get / who) ---------- */
+  .split-section{background:var(--sand);}
+  .split-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .split-grid h3{font-size:1.3rem; margin-bottom:20px;}
+  .split-grid ul{list-style:none;}
+  .split-grid ul li{
+    padding:13px 0 13px 26px; border-bottom:1px solid var(--line);
+    position:relative; color:var(--ink-soft); font-size:0.96rem;
+  }
+  .split-grid ul li::before{content:"→"; position:absolute; left:0; color:var(--turmeric); font-weight:600;}
+  @media(max-width:820px){.split-grid{grid-template-columns:1fr; gap:36px;}}
+
+  /* ---------- WHY CHOOSE ---------- */
+  .why-section{background:var(--indigo-deep); color:var(--sand-light);}
+  .why-section h2{color:var(--sand-light);}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(239,230,211,0.14); margin-top:50px; border:1px solid rgba(239,230,211,0.14);}
+  .why-card{background:var(--indigo-deep); padding:36px 30px;}
+  .why-card .mark{color:var(--turmeric-soft); font-family:'Fraunces',serif; font-size:1.6rem; margin-bottom:14px; display:block;}
+  .why-card p{color:rgba(239,230,211,0.75); font-size:0.95rem;}
+  @media(max-width:820px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CURRICULUM ---------- */
+  .curriculum-section{background:var(--sand-light);}
+  .curriculum-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line); margin-top:20px;}
+  .curriculum-grid div{
+    padding:22px 26px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
+    color:var(--ink-soft); font-size:0.96rem;
+  }
+  .curriculum-grid div:nth-child(2n){border-right:none;}
+  @media(max-width:700px){.curriculum-grid{grid-template-columns:1fr;} .curriculum-grid div{border-right:none;}}
+
+  /* ---------- FACULTY ---------- */
+  .faculty-section{background:var(--sand);}
+  .faculty-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  .faculty-card{background:var(--sand-light); border:1px solid var(--line);}
+  .faculty-photo{aspect-ratio:4/3;}
+  .faculty-body{padding:28px 30px;}
+  .faculty-body h3{font-size:1.25rem; margin-bottom:6px;}
+  .faculty-body .role{color:var(--maroon); font-size:0.82rem; font-weight:600; letter-spacing:0.02em; margin-bottom:14px; display:block;}
+  .faculty-body p{color:var(--ink-soft); font-size:0.93rem;}
+  @media(max-width:760px){.faculty-grid{grid-template-columns:1fr;}}
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial-section{background:var(--maroon); color:var(--sand-light); text-align:center;}
+  .testimonial-section blockquote{
+    font-family:'Spectral', serif; font-style:italic; font-size:clamp(1.3rem,2.4vw,1.8rem);
+    max-width:760px; margin:0 auto 20px; line-height:1.5;
+  }
+  .testimonial-section cite{font-style:normal; font-size:0.85rem; letter-spacing:0.05em; color:var(--turmeric-soft);}
+
+  /* ---------- CTA / CONTACT ---------- */
+  .cta-section{background:var(--sand-light); text-align:center;}
+  .cta-section h2{font-size:clamp(1.9rem,3.4vw,2.7rem); max-width:620px; margin:0 auto 20px;}
+  .cta-section p{color:var(--ink-soft); max-width:480px; margin:0 auto 34px;}
+
+  .contact-form{
+    max-width:480px; margin:0 auto; text-align:left;
+    background:var(--sand); border:1px solid var(--line); padding:32px;
+  }
+  .cf-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .cf-field{margin-bottom:18px;}
+  .cf-field label{display:block; font-size:0.8rem; font-weight:600; color:var(--indigo); margin-bottom:6px; letter-spacing:0.02em;}
+  .cf-field input, .cf-field textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); background:var(--sand-light);
+    font-family:'Work Sans',sans-serif; font-size:0.92rem; color:var(--ink); border-radius:2px;
+  }
+  .cf-field input:focus, .cf-field textarea:focus{outline:2px solid var(--turmeric); outline-offset:1px; border-color:var(--turmeric);}
+  @media(max-width:480px){.cf-row{grid-template-columns:1fr;} .contact-form{padding:24px 20px;}}
+
+  footer{background:var(--indigo-deep); color:rgba(239,230,211,0.65); padding:60px 0 30px;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+  footer h4{color:var(--sand-light); font-size:0.95rem; margin-bottom:16px;}
+  footer .brand{color:var(--sand-light); margin-bottom:14px;}
+  footer p{font-size:0.88rem; max-width:320px;}
+  footer ul{list-style:none;}
+  footer ul li{margin-bottom:10px; font-size:0.88rem;}
+  footer ul li a:hover{color:var(--turmeric-soft);}
+  .footer-bottom{border-top:1px solid rgba(239,230,211,0.12); padding-top:24px; font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  @media(max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+
+  @media(max-width:880px){
+    nav{padding:14px 20px;}
+    .nav-links{
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--sand-light); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{padding:16px 20px; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:flex;}
+    .nav-cta{padding:9px 16px; font-size:0.78rem;}
+    .brand{font-size:1rem;}
+  }
+  @media(max-width:480px){
+    .wrap{padding:0 20px;}
+    section{padding:72px 0;}
+    .hero{padding-top:110px; min-height:auto; padding-bottom:60px;}
+    .hero h1{font-size:2rem;}
+    .hero-ctas a{width:100%; text-align:center;}
+    .founder-badges span{font-size:0.72rem;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .stat .num{font-size:1.7rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-gallery .slide{transition:opacity .3s ease; transform:none !important;}
+    .breath-ring{animation:none;}
+  }
+</style>
 </head>
 <body>
 
-<h1>Peace Yoga Academy Gallery</h1>
+<header>
+  <nav>
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg>
+      Peace Yoga Academy
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#founder">Founder</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#courses">Courses</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#faculty">Faculty</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="nav-cta">Enquire Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
 
-<div class="gallery" id="gallery"></div>
+<main id="top">
 
-<div class="lightbox" id="lightbox">
-<span class="close">&times;</span>
-<img id="lightboxImg">
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Peace Yoga Academy · Founded by Krushna Tonde</p>
+        <h1>Classical yoga,<br>taught with <em>scientific</em> precision.</h1>
+        <p class="lead">A holistic yoga program for individuals, groups and companies — everywhere. Pranayama, asana and dhyana, taught in the tradition of classical yoga and grounded in a modern, scientific approach.</p>
+        <div class="hero-ctas">
+          <a href="#courses" class="btn-primary">Explore Courses</a>
+          <a href="#founder" class="btn-ghost">Meet the Founder</a>
+        </div>
+      </div>
+
+      <!-- RESPONSIVE HERO GALLERY -->
+      <div class="hero-gallery" id="heroGallery" role="region" aria-roledescription="carousel" aria-label="Peace Yoga Academy photo gallery">
+        <div class="slides" id="gallerySlides">
+          <div class="slide active"><img src="images/1 (1).jpeg" alt="Peace Yoga Academy class photo 1" loading="eager"></div>
+          <div class="slide"><img src="images/1 (2).jpeg" alt="Peace Yoga Academy class photo 2" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (3).jpeg" alt="Peace Yoga Academy class photo 3" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (4).jpeg" alt="Peace Yoga Academy class photo 4" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (5).jpeg" alt="Peace Yoga Academy class photo 5" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (6).jpeg" alt="Peace Yoga Academy class photo 6" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (7).jpeg" alt="Peace Yoga Academy class photo 7" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (9).jpeg" alt="Peace Yoga Academy class photo 9" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (10).jpeg" alt="Peace Yoga Academy class photo 10" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (11).jpeg" alt="Peace Yoga Academy class photo 11" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (12).jpeg" alt="Peace Yoga Academy class photo 12" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (13).jpeg" alt="Peace Yoga Academy class photo 13" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (14).jpeg" alt="Peace Yoga Academy class photo 14" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (15).jpeg" alt="Peace Yoga Academy class photo 15" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (16).jpeg" alt="Peace Yoga Academy class photo 16" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (17).jpeg" alt="Peace Yoga Academy class photo 17" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (18).jpeg" alt="Peace Yoga Academy class photo 18" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (19).jpeg" alt="Peace Yoga Academy class photo 19" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (20).jpeg" alt="Peace Yoga Academy class photo 20" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (21).jpeg" alt="Peace Yoga Academy class photo 21" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (22).jpeg" alt="Peace Yoga Academy class photo 22" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (23).jpeg" alt="Peace Yoga Academy class photo 23" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (25).jpeg" alt="Peace Yoga Academy class photo 25" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (26).jpeg" alt="Peace Yoga Academy class photo 26" loading="lazy"></div>
+          <div class="slide"><img src="images/1 (27).jpeg" alt="Peace Yoga Academy class photo 27" loading="lazy"></div>
+          <div class="slide"><img src="images/222.jpeg" alt="Peace Yoga Academy event photo" loading="lazy"></div>
+          <div class="slide"><img src="images/home.jpeg" alt="Peace Yoga Academy home photo" loading="lazy"></div>
+          <div class="slide"><img src="images/Prof. shushila maam.png" alt="Prof. Sushila Banswal" loading="lazy"></div>
+        </div>
+
+        <button class="gallery-btn gallery-prev" id="galleryPrev" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-btn gallery-next" id="galleryNext" aria-label="Next image">&#10095;</button>
+        <span class="gallery-counter" id="galleryCounter">1 / 28</span>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-WIDTH GALLERY -->
+  <section class="full-gallery-section" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>Moments from the mat.</h2>
+        </div>
+        <span class="gallery-count-tag">28 photos · tap any to view full page</span>
+      </div>
+
+      <div class="full-gallery-grid" id="fullGalleryGrid">
+        <div class="fg-item" data-index="0"><img src="images/1 (1).jpeg" alt="Peace Yoga Academy gallery photo 1" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="1"><img src="images/1 (2).jpeg" alt="Peace Yoga Academy gallery photo 2" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="2"><img src="images/1 (3).jpeg" alt="Peace Yoga Academy gallery photo 3" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="3"><img src="images/1 (4).jpeg" alt="Peace Yoga Academy gallery photo 4" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="4"><img src="images/1 (5).jpeg" alt="Peace Yoga Academy gallery photo 5" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="5"><img src="images/1 (6).jpeg" alt="Peace Yoga Academy gallery photo 6" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="6"><img src="images/1 (7).jpeg" alt="Peace Yoga Academy gallery photo 7" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="7"><img src="images/1 (9).jpeg" alt="Peace Yoga Academy gallery photo 9" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="8"><img src="images/1 (10).jpeg" alt="Peace Yoga Academy gallery photo 10" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="9"><img src="images/1 (11).jpeg" alt="Peace Yoga Academy gallery photo 11" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="10"><img src="images/1 (12).jpeg" alt="Peace Yoga Academy gallery photo 12" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="11"><img src="images/1 (13).jpeg" alt="Peace Yoga Academy gallery photo 13" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="12"><img src="images/1 (14).jpeg" alt="Peace Yoga Academy gallery photo 14" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="13"><img src="images/1 (15).jpeg" alt="Peace Yoga Academy gallery photo 15" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="14"><img src="images/1 (16).jpeg" alt="Peace Yoga Academy gallery photo 16" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="15"><img src="images/1 (17).jpeg" alt="Peace Yoga Academy gallery photo 17" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="16"><img src="images/1 (18).jpeg" alt="Peace Yoga Academy gallery photo 18" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="17"><img src="images/1 (19).jpeg" alt="Peace Yoga Academy gallery photo 19" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="18"><img src="images/1 (20).jpeg" alt="Peace Yoga Academy gallery photo 20" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="19"><img src="images/1 (21).jpeg" alt="Peace Yoga Academy gallery photo 21" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="20"><img src="images/1 (22).jpeg" alt="Peace Yoga Academy gallery photo 22" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="21"><img src="images/1 (23).jpeg" alt="Peace Yoga Academy gallery photo 23" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="22"><img src="images/1 (25).jpeg" alt="Peace Yoga Academy gallery photo 25" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="23"><img src="images/1 (26).jpeg" alt="Peace Yoga Academy gallery photo 26" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="24"><img src="images/1 (27).jpeg" alt="Peace Yoga Academy gallery photo 27" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="25"><img src="images/222.jpeg" alt="Peace Yoga Academy event photo" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="26"><img src="images/home.jpeg" alt="Peace Yoga Academy home photo" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+        <div class="fg-item" data-index="27"><img src="images/Prof. shushila maam.png" alt="Prof. Sushila Banswal" loading="lazy"><span class="fg-icon">&#8599;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-PAGE LIGHTBOX VIEWER -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full page image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <figure>
+      <img id="lightboxImg" src="" alt="">
+      <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div class="about-figure">
+        <img src="images/founder.JPG" alt="Peace Yoga Academy studio and class" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div>
+        <p class="eyebrow">About Us</p>
+        <h2>Traditional roots, a modern approach.</h2>
+        <div class="rule"></div>
+        <p>We are committed to providing a holistic yoga program for individuals, groups and companies — everywhere. What sets us apart is a yoga curriculum rooted in the tradition of classical yoga, combined with a modern, scientific approach.</p>
+        <p>Our classes offer an authentic experience composed of pranayama (breathwork), asana (posture) and dhyana (meditation), delivered across a range of yoga themes, with proper skill and technique at the centre of every session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder-section" id="founder">
+    <div class="wrap founder-grid">
+      <div class="founder-photo">
+        <img src="images/about.JPG" alt="Krushna Tonde, Founder of Peace Yoga Academy" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div>
+        <p class="eyebrow">Meet the Founder</p>
+        <h2>Master Krushna Tonde</h2>
+        <div class="rule"></div>
+        <p>Founder of Peace Yoga Academy and a highly accomplished Yoga Master with over 15 years of dedicated experience in teaching and promoting authentic yoga. His mission is to inspire individuals toward physical health, mental well-being and holistic living, through traditional yogic practice combined with a scientific approach.</p>
+        <p>He is an Authorized National Yogasana Coach certified by Yogasanabharat and NS NIS Patiala, where he secured First Rank among 140 national yoga coaches. He also serves as the Indian Ambassador of Yogasana to Europe and is an International Authorized Yogasana Coach, actively promoting Yogasana on global platforms.</p>
+        <p>Beyond yoga, he holds a 1st DAN Black Belt in Taekwondo — a reflection of the discipline and physical fitness he brings to his teaching. Through his philosophy of tradition meeting modern science, he has trained more than 2,500 students, helping them build strength, flexibility, confidence and lifelong well-being.</p>
+
+        <h4 style="margin-top:36px; font-size:1rem; color:var(--turmeric-soft);">Academic &amp; Professional Qualifications</h4>
+        <ul class="quali-list">
+          <li>Master of Arts (M.A.) in Yoga (Yogashastra)</li>
+          <li>International Certified Advanced Yoga Teacher</li>
+          <li>RYT 500 Certified by Yoga Alliance USA</li>
+          <li>Authorised National &amp; World Coach, Yogasanabharat</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="achievements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Major Achievements</p>
+        <h2>A decade of milestones, on and off the mat.</h2>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="year">2023</div>
+          <p>Honoured with the prestigious Marathwada Bhushan Award during the 75th Azadi Ka Amrit Mahotsav, in recognition of his outstanding contribution to the field of yoga.</p>
+        </div>
+        <div class="t-item">
+          <div class="year">2024</div>
+          <p>Trained 150 national yoga coaches at NS NIS Patiala — the Sports Authority of India, Punjab.</p>
+        </div>
+        <div class="t-item">
+          <div class="year">2025</div>
+          <p>Played a significant role in creating yoga history, contributing to 12 Guinness World Records achieved in Bengaluru.</p>
+        </div>
+        <div class="t-item">
+          <div class="year">2026</div>
+          <p>Served as an International Authorized Yogasana Coach for participants from Armenia and the Netherlands at the 1st World Yogasana Championship, held in Ahmedabad.</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="num">15+</div><div class="label">Years of experience</div></div>
+        <div class="stat"><div class="num">2,500+</div><div class="label">Students trained</div></div>
+        <div class="stat"><div class="num">140</div><div class="label">Coaches ranked among — 1st</div></div>
+        <div class="stat"><div class="num">12</div><div class="label">Guinness World Records</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses-section" id="courses">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our Courses</p>
+        <h2>Transform your passion into a career.</h2>
+      </div>
+      <div class="course-cards">
+        <div class="course-card">
+          <p class="eyebrow">Certification</p>
+          <h3>200 Hour Teacher Training Course</h3>
+          <p>Become a certified yoga teacher and deepen your own practice and knowledge, guided directly by Master Krushna Tonde. Yoga Alliance USA (RYT 200) certified.</p>
+          <a href="#contact">Enquire about this course →</a>
+        </div>
+        <div class="course-card">
+          <p class="eyebrow">Certification</p>
+          <h3>Pranayama Coach Course</h3>
+          <p>Become a certified pranayama coach and learn the essential principles, practices and benefits of pranayama, taught with classical and scientific grounding.</p>
+          <a href="#contact">Enquire about this course →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET / WHO SHOULD ATTEND -->
+  <section class="split-section">
+    <div class="wrap split-grid">
+      <div>
+        <h3>What you get in our Yoga Teacher Training Course</h3>
+        <ul>
+          <li>In-depth knowledge and practice of yoga asanas, pranayama, meditation and yoga philosophy</li>
+          <li>An introduction to the Bhagavad Gita and Patanjali's Yoga Sutras</li>
+          <li>The skills and confidence to become a compassionate yoga teacher</li>
+          <li>Daily interactive classes, recorded modules and self-paced lessons for flexibility</li>
+          <li>Teaching opportunities immediately after graduation</li>
+          <li>Personalised attention from founder Krushna Tonde and the Peace Yoga Academy team</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Who should attend this course?</h3>
+        <ul>
+          <li>Those who want to deepen their knowledge of yoga</li>
+          <li>Those passionate about spreading wellness and peace</li>
+          <li>Those pursuing a career as a certified yoga teacher</li>
+          <li>Those seeking a structured course with personal guidance</li>
+          <li>Those who want to join a thriving teaching community</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--turmeric-soft);">Why Peace Yoga Academy</p>
+        <h2>Planned, systematic, complete.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="mark">70 / 30</span>
+          <p>Practical yoga technique is weighted at 70%, theory — yoga history and philosophy — at 30%, so training stays grounded in real practice.</p>
+        </div>
+        <div class="why-card">
+          <span class="mark">Global</span>
+          <p>A course designed to let you teach both locally in India and globally, backed by Yoga Alliance USA certification.</p>
+        </div>
+        <div class="why-card">
+          <span class="mark">Anatomy</span>
+          <p>Anatomy and physiology, often difficult to grasp, are taught in a simple and effective way by teachers who live classical yoga daily.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Curriculum</p>
+        <h2>What the 200-hour course covers.</h2>
+      </div>
+      <div class="curriculum-grid">
+        <div>Anatomy and physiology — theory and practice</div>
+        <div>Pranayama and Shatkarma (cleansing techniques)</div>
+        <div>Advanced asana classes — backbending, hip opening, arm balancing</div>
+        <div>Sun salutation and its variations</div>
+        <div>Common traditional asana alignment</div>
+        <div>Teaching methodology — class design, sequencing, preparation</div>
+        <div>Class themes — Hatha, Beginner, Ananda, Body Opening and more</div>
+        <div>Teaching with props — block, strap, wall</div>
+        <div>Classroom skills and building class topics</div>
+        <div>Alignment skills for members of all levels</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY -->
+  <section class="faculty-section" id="faculty">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our Teaching Faculty</p>
+        <h2>Learn from teachers who live this daily.</h2>
+      </div>
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-photo"><img src="images/home.JPG" alt="Krushna Tonde" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="faculty-body">
+            <h3>Krushna Tonde</h3>
+            <span class="role">RYT 500 · Yoga Alliance USA · 1st DAN Taekwondo Black Belt</span>
+            <p>Internationally certified advanced yoga teacher (Hanoi, Vietnam) with more than a decade of teaching experience. His style blends traditional Indian yoga practice with a modern approach, including the use of props.</p>
+          </div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-photo"><img src="images/Prof. shushila maam.png" alt="Prof. Sushila Banswal" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="faculty-body">
+            <h3>Prof. Sushila Banswal</h3>
+            <span class="role">Brahmacharini Ananya Chaitanya · Resident Acharya, Chinmaya Mission Guwahati</span>
+            <p>A disciple of Pujya Swami Abhedanandaji, disciple of Swami Chinmayananda, who is in-charge of Chinmaya Mission South Africa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="wrap">
+      <blockquote>"A structured, disciplined course — I left not just more flexible, but with the confidence to actually teach."</blockquote>
+      <cite>— A 200-Hour TTC Graduate</cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact Us</p>
+      <h2>Begin your journey into classical yoga.</h2>
+      <p>Write to us to know more about upcoming batches for the 200-Hour Teacher Training Course and the Pranayama Coach Course.</p>
+      <div class="hero-ctas" style="justify-content:center; margin-bottom:56px;">
+        <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="btn-primary">WhatsApp Us — +91 99222 08065</a>
+        <a href="mailto:info@peaceyogaacademy.com" class="btn-ghost">Get in Touch</a>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required placeholder="Your full name">
+          </div>
+          <div class="cf-field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="3" placeholder="Which course are you interested in?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;">
+          <svg viewBox="0 0 40 40" width="26" height="26" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg>
+          Peace Yoga Academy
+        </a>
+        <p>A holistic yoga program for individuals, groups and companies, rooted in classical tradition and modern science.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>info@peaceyogaacademy.com</li>
+          <li>Maharashtra, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Peace Yoga Academy. All rights reserved.</span>
+      <span>Founded by Master Krushna Tonde</span>
+    </div>
+  </div>
+</footer>
 
 <script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
 
-const images = [
+  // contact form -> sends via WhatsApp (no backend needed on GitHub Pages)
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('cf-name').value.trim();
+      const phone = document.getElementById('cf-phone').value.trim();
+      const msg = document.getElementById('cf-message').value.trim();
+      const text = `Hi, I'm ${name} (${phone}). ${msg}`;
+      const url = `https://wa.me/919922208065?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+  }
 
-"images/1 (1).jpeg",
-"images/1 (2).jpeg",
-"images/1 (3).jpeg",
-"images/1 (4).jpeg",
-"images/1 (5).jpeg",
-"images/1 (6).jpeg",
-"images/1 (7).jpeg",
-"images/1 (9).jpeg",
-"images/1 (10).jpeg",
-"images/1 (11).jpeg",
-"images/1 (12).jpeg",
-"images/1 (13).jpeg",
-"images/1 (14).jpeg",
-"images/1 (15).jpeg",
-"images/1 (16).jpeg",
-"images/1 (17).jpeg",
-"images/1 (18).jpeg",
-"images/1 (19).jpeg",
-"images/1 (20).jpeg",
-"images/1 (21).jpeg",
-"images/1 (22).jpeg",
-"images/1 (23).jpeg",
-"images/1 (25).jpeg",
-"images/1 (26).jpeg",
-"images/1 (27).jpeg",
-"images/222.jpeg",
-"images/home.jpeg",
-"images/Prof. shushila maam.png"
+  /* =========================================================
+     RESPONSIVE HERO GALLERY
+     - auto-plays, pauses on hover/touch/focus
+     - swipe support for mobile
+     - dot navigation + prev/next buttons
+     - keyboard accessible (left/right arrows when focused)
+     - lazy-loads all images, none skipped
+  ========================================================== */
+  (function () {
+    const gallery = document.getElementById('heroGallery');
+    if (!gallery) return;
 
-];
+    const slidesWrap = document.getElementById('gallerySlides');
+    const slides = Array.from(slidesWrap.querySelectorAll('.slide'));
+    const dotsWrap = document.getElementById('galleryDots');
+    const counter = document.getElementById('galleryCounter');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
 
-const gallery=document.getElementById("gallery");
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightboxImg");
+    const total = slides.length;
+    let current = 0;
+    let autoTimer = null;
+    const AUTO_DELAY = 3500;
 
-images.forEach(src=>{
+    // build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
 
-let img=document.createElement("img");
+    function render() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      counter.textContent = (current + 1) + ' / ' + total;
+      // keep active dot in view on small screens
+      const activeDot = dots[current];
+      if (activeDot) activeDot.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    }
 
-img.src=src;
+    function goTo(i) {
+      current = (i + total) % total;
+      render();
+      restartAuto();
+    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
 
-img.loading="lazy";
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(next, AUTO_DELAY);
+    }
+    function stopAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = null;
+    }
+    function restartAuto() {
+      startAuto();
+    }
 
-img.onclick=()=>{
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
 
-lightbox.style.display="flex";
+    // pause on hover / focus (desktop)
+    gallery.addEventListener('mouseenter', stopAuto);
+    gallery.addEventListener('mouseleave', startAuto);
+    gallery.addEventListener('focusin', stopAuto);
+    gallery.addEventListener('focusout', startAuto);
 
-lightboxImg.src=src;
+    // keyboard navigation
+    gallery.setAttribute('tabindex', '0');
+    gallery.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
 
-}
+    // touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    gallery.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAuto();
+    }, { passive: true });
+    gallery.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        diff > 0 ? next() : prev();
+      } else {
+        startAuto();
+      }
+    }, { passive: true });
 
-gallery.appendChild(img);
+    // pause autoplay when tab/section not visible (saves resources)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) startAuto(); else stopAuto();
+      });
+    }, { threshold: 0.2 });
+    io.observe(gallery);
 
-});
+    render();
+    startAuto();
+  })();
 
-document.querySelector(".close").onclick=()=>{
+  /* =========================================================
+     FULL-WIDTH GALLERY -> FULL PAGE LIGHTBOX VIEWER
+     - click any thumbnail to open the image full page
+     - prev/next, keyboard arrows, Escape to close
+     - click backdrop to close, body scroll locked while open
+  ========================================================== */
+  (function () {
+    const grid = document.getElementById('fullGalleryGrid');
+    if (!grid) return;
 
-lightbox.style.display="none";
+    const items = Array.from(grid.querySelectorAll('.fg-item'));
+    const photos = items.map(it => ({
+      src: it.querySelector('img').getAttribute('src'),
+      alt: it.querySelector('img').getAttribute('alt')
+    }));
 
-}
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCaption = document.getElementById('lightboxCaption');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
 
-lightbox.onclick=(e)=>{
+    let idx = 0;
 
-if(e.target===lightbox){
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      lbImg.src = photos[idx].src;
+      lbImg.alt = photos[idx].alt;
+      lbCaption.textContent = (idx + 1) + ' of ' + photos.length;
+    }
 
-lightbox.style.display="none";
+    function open(i) {
+      show(i);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
 
-}
+    function close() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
 
-}
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => open(i));
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'View ' + photos[i].alt + ' full page');
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+      });
+    });
 
+    lbClose.addEventListener('click', close);
+    lbNext.addEventListener('click', () => show(idx + 1));
+    lbPrev.addEventListener('click', () => show(idx - 1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+
+    // swipe support inside lightbox
+    let lbTouchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      lbTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = lbTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) diff > 0 ? show(idx + 1) : show(idx - 1);
+    }, { passive: true });
+  })();
 </script>
-
 </body>
 </html>
-GitHub Folder Structure
-peaceyoga
-│
-├── gallery.html
-│
-├── images
-│     ├── 1 (1).jpeg
-│     ├── 1 (2).jpeg
-│     ├── ....
-│     ├── 222.jpeg
-│     ├── home.jpeg
-│     └── Prof. shushila maam.png
-Ek aur salah
-Aapke image names me spaces aur brackets hain. Website par kabhi-kabhi URL encoding ki wajah se dikkat aa sakti hai. Agar possible ho to images ko rename kar dijiye:
-
-1-1.jpeg
-1-2.jpeg
-...
-prof-shushila-maam.png
-Isse GitHub Pages par sab kuch aur reliable chalega.
-
-Agar chahen, main is gallery ko premium look (animations, category filters, search aur next/previous buttons ke saath) bhi bana sakta hoon.
-
-
-https://navghare4217-boop.github.io/peaceyoga/gallery.html not open 
-
-Agar https://navghare4217-boop.github.io/peaceyoga/gallery.html open nahi ho rahi, to inme se koi ek problem hai:
-
-1. gallery.html upload hua hai?
-GitHub repository me check karein ki file ka path exactly ye ho:
-
-peaceyoga/
-├── gallery.html
-├── index.html
-└── images/
-gallery.html root folder me hona chahiye, kisi aur folder ke andar nahi.
-
-2. GitHub Pages enable hai?
-Repository me:
-
-Settings → Pages
-
-Source = Deploy from a branch
-
-Branch = main
-
-Folder = / (root)
-
-3. Deploy complete hua?
-GitHub par push karne ke baad 1–5 minute wait karein.
-
-4. URL sahi hai?
-Agar repository ka naam peaceyoga hai to URL hona chahiye:
-
-https://navghare4217-boop.github.io/peaceyoga/gallery.html
-Mujhe lagta hai actual problem file upload ki hai.
-Mujhe ye link bhejiye:
-
-https://github.com/navghare4217-boop/peaceyoga
-
-(Repository ka main page)
-
-Ya phir repository ka screenshot bhej dijiye.
-
-Main dekhkar bata dunga:
-
-gallery.html kahan rakhna hai
-
-Images kyon load nahi ho rahi
-
-2 minute me fix ka exact solution.
-
-
-upper ke image ka galary block bana ke do auto slide 1 by 1 home page pe lagana hai best attactive auto responsive 
-
-index.html ke liye premium responsive auto-slider ka complete code kaafi bada hai (500+ lines), isliye ek reply me fit nahi ho sakta.
-
-Main aapke GitHub project (peaceyoga) ke hisaab se ready-to-paste version bana sakta hoon jisme:
-
-✅ 28 images (images/1 (1).jpeg ... 222.jpeg, home.jpeg, Prof. shushila maam.png)
-
-✅ Full-width hero slider
-
-✅ Auto slide (3.5 sec)
-
-✅ Previous / Next buttons
-
-✅ Dot indicators
-
-✅ Touch swipe (mobile)
-
-✅ Pause on hover
-
-✅ Fade + zoom animation
-
-✅ Responsive (mobile/tablet/desktop)
-
-✅ Pure HTML/CSS/JavaScript (GitHub Pages compatible)
-
-Ye ek hi response me dena possible nahi hai.
-
-Sabse accha tarika: main iske liye 3 files banaunga:
-
-index.html
-
-style.css
-
-script.js
-
-Ye professional aur maintain karne me aasaan hoga.
-
-Ya agar aap chahte hain ki sab kuch sirf ek hi index.html file me ho (CSS aur JavaScript bhi usi me), to woh bhi bana sakta hoon.
-
-
-sab code 1 sath d o pest karata hu
-
-Main ek hi reply me itna bada HTML + CSS + JavaScript code nahi de sakta, kyunki response ki maximum length limit hoti hai. Aapke 28 images ke saath premium slider ka code us limit se kaafi bada ho jayega.
-
-Sabse accha tarika hai ki main aapko ek single index.html file bana kar doon jise aap bas copy-paste kar dein.
-
-Ya to:
-
-main us file ko downloadable HTML file ke roop me bana kar de sakta hoon, ya
-
-2–3 parts me bhej sakta hoon jise aap bina kuch badle paste kar denge.
-
-Is tarah aapko poora code milega aur GitHub Pages par seedha chal jayega.
-
-
-
-Pasted text(2).txt
-Document
- ye pura code hai isame home page me laga nahi 
-
-Aapke code ko dekhkar mujhe main problem mil gayi.
-
-❌ Problem 1: Image extension mismatch
-Aapke code me ye likha hai:
-
-<img src="images/home.JPG">
-<img src="images/founder.JPG">
-<img src="images/about.JPG">
-Lekin aapne jo images batayi thi wo hain:
-
-images/home.jpeg
-images/222.jpeg
-images/Prof. shushila maam.png
-GitHub Pages case-sensitive hota hai.
-
-Agar file ka naam:
-
-home.jpeg
-hai aur code me:
-
-home.JPG
-likha hai to image load nahi hogi.
-
-❌ Problem 2
-Mujhe aapke code me slider/gallery ka code hi nahi mila.
-
-Hero section me sirf ek image hai:
-
-<div class="hero-photo">
-   <img src="images/home.JPG">
-</div>
-Isliye gallery ya auto slide nahi chal rahi.
-
-Main kya karunga
-Main isi index.html ko edit karke:
-
-✅ Hero image ki jagah
-
-28 Images Auto Slider
-
-Full Screen
-
-Auto Slide
-
-Previous Next
-
-Dots
-
-Mobile Responsive
-
-Attractive Animation
-
-laga dunga.
-
-Ye code lagbhag 600–700 lines ka hoga, isliye yahan reply me dena possible nahi hai.
-
-Main aapke isi index.html ko modify karke ready file de sakta hoon, jise aap GitHub me upload karoge aur slider turant chal jayega.
-
-
-slider/gallery ka code hi nahi mila lagana hai new 
-
-Haan. Aapke code me slider nahi hai. Hero section ke andar jo <div class="hero-photo">...</div> hai, use poora delete karke uski jagah ye code paste kar dijiye.
-
-1. HTML (Hero image ki jagah)
-<div class="slider">
-
-<img class="slide active" src="images/1 (1).jpeg">
-<img class="slide" src="images/1 (2).jpeg">
-<img class="slide" src="images/1 (3).jpeg">
-<img class="slide" src="images/1 (4).jpeg">
-<img class="slide" src="images/1 (5).jpeg">
-<img class="slide" src="images/1 (6).jpeg">
-<img class="slide" src="images/1 (7).jpeg">
-<img class="slide" src="images/1 (9).jpeg">
-<img class="slide" src="images/1 (10).jpeg">
-<img class="slide" src="images/1 (11).jpeg">
-<img class="slide" src="images/1 (12).jpeg">
-<img class="slide" src="images/1 (13).jpeg">
-<img class="slide" src="images/1 (14).jpeg">
-<img class="slide" src="images/1 (15).jpeg">
-<img class="slide" src="images/1 (16).jpeg">
-<img class="slide" src="images/1 (17).jpeg">
-<img class="slide" src="images/1 (18).jpeg">
-<img class="slide" src="images/1 (19).jpeg">
-<img class="slide" src="images/1 (20).jpeg">
-<img class="slide" src="images/1 (21).jpeg">
-<img class="slide" src="images/1 (22).jpeg">
-<img class="slide" src="images/1 (23).jpeg">
-<img class="slide" src="images/1 (25).jpeg">
-<img class="slide" src="images/1 (26).jpeg">
-<img class="slide" src="images/1 (27).jpeg">
-<img class="slide" src="images/222.jpeg">
-<img class="slide" src="images/home.jpeg">
-<img class="slide" src="images/Prof. shushila maam.png">
-
-</div>
-2. CSS (</style> se pehle paste karein)
-.slider{
-position:relative;
-width:100%;
-height:550px;
-overflow:hidden;
-border-radius:20px;
-box-shadow:0 20px 50px rgba(0,0,0,.25);
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 1s ease-in-out;
-}
-
-.slide.active{
-opacity:1;
-}
-
-@media(max-width:768px){
-
-.slider{
-
-height:300px;
-
-}
-
-}
-3. JavaScript (</body> se pehle paste karein)
-<script>
-
-const slides=document.querySelectorAll(".slide");
-
-let current=0;
-
-function changeSlide(){
-
-slides[current].classList.remove("active");
-
-current++;
-
-if(current>=slides.length){
-
-current=0;
-
-}
-
-slides[current].classList.add("active");
-
-}
-
-setInterval(changeSlide,3000);
-
-</script>
-Agar aap Netflix jaisa premium slider chahte hain:
-✅ Auto slide
-
-✅ Left/Right arrow
-
-✅ Dots
-
-✅ Zoom animation
-
-✅ Text overlay
-
-✅ Swipe support (mobile)
-
-✅ Infinite loop
-
-✅ Professional look
-
-to main woh bhi bana sakta hoon.
-
-
-pura new block ka do dedo 
-
-Ye poora Hero Gallery Block hai. Isse <section class="hero"> ke right side (jahan abhi breath-wrap ya hero-photo hai) ki jagah paste kar dijiye.
-
-HTML
-<div class="hero-slider">
-
-    <img src="images/1 (1).jpeg" class="active">
-    <img src="images/1 (2).jpeg">
-    <img src="images/1 (3).jpeg">
-    <img src="images/1 (4).jpeg">
-    <img src="images/1 (5).jpeg">
-    <img src="images/1 (6).jpeg">
-    <img src="images/1 (7).jpeg">
-    <img src="images/1 (9).jpeg">
-    <img src="images/1 (10).jpeg">
-    <img src="images/1 (11).jpeg">
-    <img src="images/1 (12).jpeg">
-    <img src="images/1 (13).jpeg">
-    <img src="images/1 (14).jpeg">
-    <img src="images/1 (15).jpeg">
-    <img src="images/1 (16).jpeg">
-    <img src="images/1 (17).jpeg">
-    <img src="images/1 (18).jpeg">
-    <img src="images/1 (19).jpeg">
-    <img src="images/1 (20).jpeg">
-    <img src="images/1 (21).jpeg">
-    <img src="images/1 (22).jpeg">
-    <img src="images/1 (23).jpeg">
-    <img src="images/1 (25).jpeg">
-    <img src="images/1 (26).jpeg">
-    <img src="images/1 (27).jpeg">
-    <img src="images/222.jpeg">
-    <img src="images/home.jpeg">
-    <img src="images/Prof. shushila maam.png">
-
-    <button id="prev">&#10094;</button>
-    <button id="next">&#10095;</button>
-
-</div>
-CSS (</style> se pehle)
-.hero-slider{
-position:relative;
-width:100%;
-height:650px;
-overflow:hidden;
-border-radius:20px;
-box-shadow:0 20px 50px rgba(0,0,0,.25);
-background:#000;
-}
-
-.hero-slider img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:all 1s ease;
-transform:scale(1.08);
-}
-
-.hero-slider img.active{
-opacity:1;
-transform:scale(1);
-}
-
-.hero-slider button{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:50px;
-height:50px;
-border:none;
-background:rgba(255,255,255,.4);
-backdrop-filter:blur(8px);
-font-size:30px;
-cursor:pointer;
-border-radius:50%;
-z-index:100;
-}
-
-#prev{
-left:15px;
-}
-
-#next{
-right:15px;
-}
-
-.hero-slider button:hover{
-background:white;
-}
-
-@media(max-width:768px){
-
-.hero-slider{
-
-height:320px;
-
-}
-
-.hero-slider button{
-
-width:40px;
-
-height:40px;
-
-font-size:22px;
-
-}
-
-}
-JavaScript (</body> se pehle)
-<script>
-
-const slider=document.querySelectorAll(".hero-slider img");
-
-let index=0;
-
-function showSlide(i){
-
-slider.forEach(s=>s.classList.remove("active"));
-
-slider[i].classList.add("active");
-
-}
-
-function nextSlide(){
-
-index++;
-
-if(index>=slider.length){
-
-index=0;
-
-}
-
-showSlide(index);
-
-}
-
-function prevSlide(){
-
-index--;
-
-if(index<0){
-
-index=slider.length-1;
-
-}
-
-showSlide(index);
-
-}
-
-document.getElementById("next").onclick=nextSlide;
-
-document.getElementById("prev").onclick=prevSlide;
-
-setInterval(nextSlide,3500);
-
-</script>
-⚠️ Ek aur baat
-Aapke image names me spaces aur brackets hain (1 (1).jpeg). Ye GitHub Pages par kabhi-kabhi issue create karte hain. Agar possible ho to images ko rename kar dijiye:
-
-1-1.jpeg
-1-2.jpeg
-1-3.jpeg
-...
-home.jpeg
-prof-shushila-maam.png
-Agar aap Apple/Netflix style premium hero slider chahte hain (text overlay, dots, thumbnails, zoom animation, swipe support aur modern effects ke saath), to wo bhi bana sakta hoon.
-
-
-Pasted text(3).txt
-Document
-isasko sudharo home page ki galary auto responsive and best do do pura without skip any content
-
-
-
-Main kar sakta hoon, lekin mujhe aapki index.html file ka actual code chahiye.
-
-Abhi mujhe sirf aapka message dikh raha hai—index.html ka content upload nahi hua hai. Isliye main bina code dekhe usko modify karke "without skipping any content" version nahi de sakta.
-
-Ye karein:
-index.html file upload karein (ya ZIP project upload karein).
-
-Main usi file ko edit karke wapas dunga.
-
-Main ye sab karunga:
-
-✅ Aapka existing content bilkul nahi hataunga
-
-✅ Home page par premium responsive auto gallery slider add karunga
-
-✅ 28 images automatically use hongi
-
-✅ Auto slide + Previous/Next buttons
-
-✅ Dots indicator
-
-✅ Touch swipe (mobile)
-
-✅ Hover par pause
-
-✅ Smooth fade + zoom animation
-
-✅ Fast loading (lazy loading)
-
-✅ GitHub Pages compatible
-
-✅ Mobile, tablet aur desktop responsive
-
-✅ SEO aur performance ko bhi improve karunga
-
-Bas index.html upload kar dijiye, phir main aapko complete modified file dunga jise aap seedha GitHub me replace kar denge.
-
-
-ChatGPT
-Today 9:18 PM
-gothub ko godady domin link karana hai setp
-
-
-Agar aapne GitHub Pages par website host ki hai aur usko GoDaddy domain se connect karna hai, to ye steps follow karein:
-1. GitHub Pages enable karein
-GitHub repository open karein.
-Settings → Pages
-Source select karein (main branch / root).
-Website URL generate ho jayega.
-2. Custom Domain add karein
-GitHub Settings → Pages
-Custom domain me apna domain likhein.
-Example: www.example.com
-Save karein.
-Agar available ho to Enforce HTTPS baad me enable karein (DNS propagate hone ke baad).
-3. GoDaddy DNS me records add karein
-Agar www use karna hai:
-TypeHostValueCNAMEwwwyourusername.github.io
-yourusername ki jagah apna GitHub username likhein.
-Agar root domain (example.com) bhi chalana hai:
-TypeHostValueA@185.199.108.153A@185.199.109.153A@185.199.110.153A@185.199.111.153
-4. Domain Forwarding (Optional)
-Agar example.com ko www.example.com par redirect karna chahte hain, to GoDaddy me forwarding set kar sakte hain.
-5. Wait
-DNS update hone me 10 minute se 24 ghante (kabhi-kabhi 48 ghante) lag sakte hain.
-Phir GitHub Pages me HTTPS automatically enable ho jayega.
-Agar aapki website ka domain bata dein:
-GoDaddy domain: ________
-GitHub username: ________
-Repository name: ________
-To main aapko exact DNS records aur settings bata dunga.
-
-
-Agar GitHub website ke liye online image hosting chahiye jisse direct image URL mile aur gallery bana sako, to ye options sabse achhe hain:
-1. GitHub Repository (⭐⭐⭐⭐⭐ Recommended)
-images folder bana do.
-Saari images upload karo.
-URL use karo:
-https://yourdomain.com/images/photo1.jpg
-Ya agar custom domain nahi hai:
-https://username.github.io/repository/images/photo1.jpg
-Best hai kyunki website aur images ek hi jagah rahengi.
-2. Cloudinary (⭐⭐⭐⭐⭐ Best for Gallery)
-Free plan.
-Image optimize karta hai.
-Direct image URL milta hai.
-Gallery ke liye bahut accha.
-Example:
-https://res.cloudinary.com/your-cloud/image/upload/photo.jpg
-3. Imgur (⭐⭐⭐)
-Jaldi upload ho jata hai.
-Direct link mil jata hai.
-Professional website ke liye recommended nahi.
-4. Firebase Storage (⭐⭐⭐⭐)
-Google ka storage.
-Fast aur reliable.
-Direct download URL milta hai.
-Meri recommendation
-Agar aap GitHub Pages website bana rahe hain, to:
-100–500 images hain → GitHub images folder me rakho.
-1000+ images, gallery, optimization chahiye → Cloudinary use karo.
-Agar aap Peace Yoga Academy website bana rahe hain, to main aapke liye:
-Responsive gallery
-Lightbox (image click karke bada dekhna)
-Lazy loading
-Category filter (Yoga, Events, Classes)
-sab HTML/CSS/JavaScript me bana sakta hoon.
-
-
-girhub me imges flgder me rahi ag galary aise banaru
-
-
-Haan, GitHub me images folder rakhkar gallery banana bilkul sahi tarika hai.
-Aapka structure kuch is tarah ho:
-website/ │── index.html │── gallery.html │── css/ │── js/ └── images/     ├── yoga1.jpg     ├── yoga2.jpg     ├── yoga3.jpg     ├── event1.jpg     ├── event2.jpg     └── ...
-Gallery page me images ko is tarah use karein:
-<div class="gallery">   <img src="images/yoga1.jpg" alt="Yoga 1">   <img src="images/yoga2.jpg" alt="Yoga 2">   <img src="images/yoga3.jpg" alt="Yoga 3">   <img src="images/event1.jpg" alt="Event 1"> </div>
-CSS:
-.gallery {   display: grid;   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   gap: 15px; }  .gallery img {   width: 100%;   height: 250px;   object-fit: cover;   border-radius: 10px;   cursor: pointer; }
-Agar bahut saari images (100+ ya 500+) hain
-To har image ko manually HTML me likhna mushkil hoga. Iske liye:
-JavaScript se image list load kar sakte hain (agar list maintain karein), ya
-Gallery generator bana sakte hain jo sirf image names ki array se poori gallery bana de.
-Main aapke liye click karke full-size image khulne wali (Lightbox) aur auto-generated gallery bhi bana sakta hoon, jisme sirf image ka naam add karna padega, HTML baar-baar edit nahi karna padega.
-
-
-"D:\peace yoga\images\1 (1).jpeg" "D:\peace yoga\images\1 (2).jpeg" "D:\peace yoga\images\1 (3).jpeg" "D:\peace yoga\images\1 (4).jpeg" "D:\peace yoga\images\1 (5).jpeg" "D:\peace yoga\images\1 (6).jpeg" "D:\peace yoga\images\1 (7).jpeg" "D:\peace yoga\images\1 (9).jpeg" "D:\peace yoga\images\1 (10).jpeg" "D:\peace yoga\images\1 (11).jpeg" "D:\peace yoga\images\1 (12).jpeg" "D:\peace yoga\images\1 (13).jpeg" "D:\peace yoga\images\1 (14).jpeg" "D:\peace yoga\images\1 (15).jpeg" "D:\peace yoga\images\1 (16).jpeg" "D:\peace yoga\images\1 (17).jpeg" "D:\peace yoga\images\1 (18).jpeg" "D:\peace yoga\images\1 (19).jpeg" "D:\peace yoga\images\1 (20).jpeg" "D:\peace yoga\images\1 (21).jpeg" "D:\peace yoga\images\1 (22).jpeg" "D:\peace yoga\images\1 (23).jpeg" "D:\peace yoga\images\1 (25).jpeg" "D:\peace yoga\images\1 (26).jpeg" "D:\peace yoga\images\1 (27).jpeg" "D:\peace yoga\images\222.jpeg" "D:\peace yoga\images\home.jpeg" "D:\peace yoga\images\Prof. shushila maam.png" ye sab images hai https://github.com/navghare4217-boop/peaceyoga/tree/main/images\ ye path 
-
-
-Agar ye images GitHub repository ke images folder me upload hain, to local Windows path (D:\peace yoga\images\...) use nahi hoga. Website me relative path use karna hoga.
-Agar structure aisa hai:
-peaceyoga/ ├── index.html ├── gallery.html └── images/     ├── 1 (1).jpeg     ├── 1 (2).jpeg     ├── ...     ├── 222.jpeg     ├── home.jpeg     └── Prof. shushila maam.png
-To HTML me:
-<div class="gallery">   <img src="images/1 (1).jpeg" alt="Yoga Image 1">   <img src="images/1 (2).jpeg" alt="Yoga Image 2">   <img src="images/1 (3).jpeg" alt="Yoga Image 3">   <img src="images/1 (4).jpeg" alt="Yoga Image 4">   <img src="images/1 (5).jpeg" alt="Yoga Image 5">   <img src="images/1 (6).jpeg" alt="Yoga Image 6">   <!-- Aur isi tarah baaki images --> </div>
-Ek zaroori salah
-Aapke file names me spaces aur brackets hain, jaise:
-1 (1).jpeg
-Prof. shushila maam.png
-Ye technically chal sakte hain, lekin web projects me problems create kar sakte hain.
-Inhe rename karna behtar rahega:
-1-1.jpeg 1-2.jpeg 1-3.jpeg ... 222.jpeg home.jpeg prof-shushila-maam.png
-Isse links simple ho jayenge:
-<img src="images/1-1.jpeg"> <img src="images/prof-shushila-maam.png">
-Main aapke liye poori gallery bana sakta hoon
-✅ Responsive grid
-✅ Image par click karne par full-screen lightbox
-✅ Mobile-friendly
-✅ Modern hover effect
-✅ Aapki sabhi images automatically include
-Bas ek baat confirm kar dijiye:
-Kya aap GitHub repository me images ko rename kar sakte hain (1-1.jpeg, 1-2.jpeg...), ya wahi existing names rakhna chahte hain?
-
-
-pure images ka ful galary code do hithub ke liye
-
-
-Haan. Agar images images folder me hain, to neeche diya gaya code GitHub Pages par chalega.
-Note: Aapke filenames me spaces aur brackets hain (1 (1).jpeg), isliye maine unhe double quotes ke andar rakha hai.
-gallery.html
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Peace Yoga Academy Gallery</title>  <style> *{     margin:0;     padding:0;     box-sizing:border-box;     font-family:Arial,sans-serif; }  body{     background:#f7f7f7; }  h1{     text-align:center;     padding:30px 10px;     color:#2c3e50; }  .gallery{     max-width:1300px;     margin:auto;     padding:20px;     display:grid;     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));     gap:20px; }  .gallery img{     width:100%;     height:260px;     object-fit:cover;     border-radius:12px;     cursor:pointer;     transition:.3s;     box-shadow:0 5px 15px rgba(0,0,0,.15); }  .gallery img:hover{     transform:scale(1.05); }  .lightbox{     display:none;     position:fixed;     inset:0;     background:rgba(0,0,0,.9);     justify-content:center;     align-items:center;     z-index:9999; }  .lightbox img{     max-width:90%;     max-height:90%;     border-radius:10px; }  .close{     position:absolute;     top:20px;     right:30px;     font-size:40px;     color:#fff;     cursor:pointer; } </style>  </head> <body>  <h1>Peace Yoga Academy Gallery</h1>  <div class="gallery" id="gallery"></div>  <div class="lightbox" id="lightbox"> <span class="close">&times;</span> <img id="lightboxImg"> </div>  <script>  const images = [  "images/1 (1).jpeg", "images/1 (2).jpeg", "images/1 (3).jpeg", "images/1 (4).jpeg", "images/1 (5).jpeg", "images/1 (6).jpeg", "images/1 (7).jpeg", "images/1 (9).jpeg", "images/1 (10).jpeg", "images/1 (11).jpeg", "images/1 (12).jpeg", "images/1 (13).jpeg", "images/1 (14).jpeg", "images/1 (15).jpeg", "images/1 (16).jpeg", "images/1 (17).jpeg", "images/1 (18).jpeg", "images/1 (19).jpeg", "images/1 (20).jpeg", "images/1 (21).jpeg", "images/1 (22).jpeg", "images/1 (23).jpeg", "images/1 (25).jpeg", "images/1 (26).jpeg", "images/1 (27).jpeg", "images/222.jpeg", "images/home.jpeg", "images/Prof. shushila maam.png"  ];  const gallery=document.getElementById("gallery"); const lightbox=document.getElementById("lightbox"); const lightboxImg=document.getElementById("lightboxImg");  images.forEach(src=>{  let img=document.createElement("img");  img.src=src;  img.loading="lazy";  img.onclick=()=>{  lightbox.style.display="flex";  lightboxImg.src=src;  }  gallery.appendChild(img);  });  document.querySelector(".close").onclick=()=>{  lightbox.style.display="none";  }  lightbox.onclick=(e)=>{  if(e.target===lightbox){  lightbox.style.display="none";  }  }  </script>  </body> </html>
-GitHub Folder Structure
-peaceyoga │ ├── gallery.html │ ├── images │     ├── 1 (1).jpeg │     ├── 1 (2).jpeg │     ├── .... │     ├── 222.jpeg │     ├── home.jpeg │     └── Prof. shushila maam.png
-Ek aur salah
-Aapke image names me spaces aur brackets hain. Website par kabhi-kabhi URL encoding ki wajah se dikkat aa sakti hai. Agar possible ho to images ko rename kar dijiye:
-1-1.jpeg 1-2.jpeg ... prof-shushila-maam.png
-Isse GitHub Pages par sab kuch aur reliable chalega.
-Agar chahen, main is gallery ko premium look (animations, category filters, search aur next/previous buttons ke saath) bhi bana sakta hoon.
-
-
-https://navghare4217-boop.github.io/peaceyoga/gallery.html not open 
-
-
-Agar https://navghare4217-boop.github.io/peaceyoga/gallery.html open nahi ho rahi, to inme se koi ek problem hai:
-1. gallery.html upload hua hai?
-GitHub repository me check karein ki file ka path exactly ye ho:
-peaceyoga/ ├── gallery.html ├── index.html └── images/
-gallery.html root folder me hona chahiye, kisi aur folder ke andar nahi.
-2. GitHub Pages enable hai?
-Repository me:
-Settings → Pages
-Source = Deploy from a branch
-Branch = main
-Folder = / (root)
-3. Deploy complete hua?
-GitHub par push karne ke baad 1–5 minute wait karein.
-4. URL sahi hai?
-Agar repository ka naam peaceyoga hai to URL hona chahiye:
-https://navghare4217-boop.github.io/peaceyoga/gallery.html
-Mujhe lagta hai actual problem file upload ki hai.
-Mujhe ye link bhejiye:
-https://github.com/navghare4217-boop/peaceyoga
-(Repository ka main page)
-Ya phir repository ka screenshot bhej dijiye.
-Main dekhkar bata dunga:
-gallery.html kahan rakhna hai
-Images kyon load nahi ho rahi
-2 minute me fix ka exact solution.
-
-
-upper ke image ka galary block bana ke do auto slide 1 by 1 home page pe lagana hai best attactive auto responsive 
-
-
-index.html ke liye premium responsive auto-slider ka complete code kaafi bada hai (500+ lines), isliye ek reply me fit nahi ho sakta.
-Main aapke GitHub project (peaceyoga) ke hisaab se ready-to-paste version bana sakta hoon jisme:
-✅ 28 images (images/1 (1).jpeg ... 222.jpeg, home.jpeg, Prof. shushila maam.png)
-✅ Full-width hero slider
-✅ Auto slide (3.5 sec)
-✅ Previous / Next buttons
-✅ Dot indicators
-✅ Touch swipe (mobile)
-✅ Pause on hover
-✅ Fade + zoom animation
-✅ Responsive (mobile/tablet/desktop)
-✅ Pure HTML/CSS/JavaScript (GitHub Pages compatible)
-Ye ek hi response me dena possible nahi hai.
-Sabse accha tarika: main iske liye 3 files banaunga:
-index.html
-style.css
-script.js
-Ye professional aur maintain karne me aasaan hoga.
-Ya agar aap chahte hain ki sab kuch sirf ek hi index.html file me ho (CSS aur JavaScript bhi usi me), to woh bhi bana sakta hoon.
-
-
-sab code 1 sath d o pest karata hu
-
-
-Main ek hi reply me itna bada HTML + CSS + JavaScript code nahi de sakta, kyunki response ki maximum length limit hoti hai. Aapke 28 images ke saath premium slider ka code us limit se kaafi bada ho jayega.
-Sabse accha tarika hai ki main aapko ek single index.html file bana kar doon jise aap bas copy-paste kar dein.
-Ya to:
-main us file ko downloadable HTML file ke roop me bana kar de sakta hoon, ya
-2–3 parts me bhej sakta hoon jise aap bina kuch badle paste kar denge.
-Is tarah aapko poora code milega aur GitHub Pages par seedha chal jayega.
-
-
-Pasted text(2).txt
-Document
- ye pura code hai isame home page me laga nahi 
-
-
-Aapke code ko dekhkar mujhe main problem mil gayi.
-❌ Problem 1: Image extension mismatch
-Aapke code me ye likha hai:
-<img src="images/home.JPG"> <img src="images/founder.JPG"> <img src="images/about.JPG">
-Lekin aapne jo images batayi thi wo hain:
-images/home.jpeg images/222.jpeg images/Prof. shushila maam.png
-GitHub Pages case-sensitive hota hai.
-Agar file ka naam:
-home.jpeg
-hai aur code me:
-home.JPG
-likha hai to image load nahi hogi.
-❌ Problem 2
-Mujhe aapke code me slider/gallery ka code hi nahi mila.
-Hero section me sirf ek image hai:
-<div class="hero-photo">    <img src="images/home.JPG"> </div>
-Isliye gallery ya auto slide nahi chal rahi.
-Main kya karunga
-Main isi index.html ko edit karke:
-✅ Hero image ki jagah
-28 Images Auto Slider
-Full Screen
-Auto Slide
-Previous Next
-Dots
-Mobile Responsive
-Attractive Animation
-laga dunga.
-Ye code lagbhag 600–700 lines ka hoga, isliye yahan reply me dena possible nahi hai.
-Main aapke isi index.html ko modify karke ready file de sakta hoon, jise aap GitHub me upload karoge aur slider turant chal jayega.
-
-
-slider/gallery ka code hi nahi mila lagana hai new 
-
-
-Haan. Aapke code me slider nahi hai. Hero section ke andar jo <div class="hero-photo">...</div> hai, use poora delete karke uski jagah ye code paste kar dijiye.
-1. HTML (Hero image ki jagah)
-<div class="slider">  <img class="slide active" src="images/1 (1).jpeg"> <img class="slide" src="images/1 (2).jpeg"> <img class="slide" src="images/1 (3).jpeg"> <img class="slide" src="images/1 (4).jpeg"> <img class="slide" src="images/1 (5).jpeg"> <img class="slide" src="images/1 (6).jpeg"> <img class="slide" src="images/1 (7).jpeg"> <img class="slide" src="images/1 (9).jpeg"> <img class="slide" src="images/1 (10).jpeg"> <img class="slide" src="images/1 (11).jpeg"> <img class="slide" src="images/1 (12).jpeg"> <img class="slide" src="images/1 (13).jpeg"> <img class="slide" src="images/1 (14).jpeg"> <img class="slide" src="images/1 (15).jpeg"> <img class="slide" src="images/1 (16).jpeg"> <img class="slide" src="images/1 (17).jpeg"> <img class="slide" src="images/1 (18).jpeg"> <img class="slide" src="images/1 (19).jpeg"> <img class="slide" src="images/1 (20).jpeg"> <img class="slide" src="images/1 (21).jpeg"> <img class="slide" src="images/1 (22).jpeg"> <img class="slide" src="images/1 (23).jpeg"> <img class="slide" src="images/1 (25).jpeg"> <img class="slide" src="images/1 (26).jpeg"> <img class="slide" src="images/1 (27).jpeg"> <img class="slide" src="images/222.jpeg"> <img class="slide" src="images/home.jpeg"> <img class="slide" src="images/Prof. shushila maam.png">  </div>
-2. CSS (</style> se pehle paste karein)
-.slider{ position:relative; width:100%; height:550px; overflow:hidden; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,.25); }  .slide{ position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease-in-out; }  .slide.active{ opacity:1; }  @media(max-width:768px){  .slider{  height:300px;  }  }
-3. JavaScript (</body> se pehle paste karein)
-<script>  const slides=document.querySelectorAll(".slide");  let current=0;  function changeSlide(){  slides[current].classList.remove("active");  current++;  if(current>=slides.length){  current=0;  }  slides[current].classList.add("active");  }  setInterval(changeSlide,3000);  </script>
-Agar aap Netflix jaisa premium slider chahte hain:
-✅ Auto slide
-✅ Left/Right arrow
-✅ Dots
-✅ Zoom animation
-✅ Text overlay
-✅ Swipe support (mobile)
-✅ Infinite loop
-✅ Professional look
-to main woh bhi bana sakta hoon.
-
-
-pura new block ka do dedo 
-
-
-Ye poora Hero Gallery Block hai. Isse <section class="hero"> ke right side (jahan abhi breath-wrap ya hero-photo hai) ki jagah paste kar dijiye.
-HTML
-<div class="hero-slider">      <img src="images/1 (1).jpeg" class="active">     <img src="images/1 (2).jpeg">     <img src="images/1 (3).jpeg">     <img src="images/1 (4).jpeg">     <img src="images/1 (5).jpeg">     <img src="images/1 (6).jpeg">     <img src="images/1 (7).jpeg">     <img src="images/1 (9).jpeg">     <img src="images/1 (10).jpeg">     <img src="images/1 (11).jpeg">     <img src="images/1 (12).jpeg">     <img src="images/1 (13).jpeg">     <img src="images/1 (14).jpeg">     <img src="images/1 (15).jpeg">     <img src="images/1 (16).jpeg">     <img src="images/1 (17).jpeg">     <img src="images/1 (18).jpeg">     <img src="images/1 (19).jpeg">     <img src="images/1 (20).jpeg">     <img src="images/1 (21).jpeg">     <img src="images/1 (22).jpeg">     <img src="images/1 (23).jpeg">     <img src="images/1 (25).jpeg">     <img src="images/1 (26).jpeg">     <img src="images/1 (27).jpeg">     <img src="images/222.jpeg">     <img src="images/home.jpeg">     <img src="images/Prof. shushila maam.png">      <button id="prev">&#10094;</button>     <button id="next">&#10095;</button>  </div>
-CSS (</style> se pehle)
-.hero-slider{ position:relative; width:100%; height:650px; overflow:hidden; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,.25); background:#000; }  .hero-slider img{ position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition:all 1s ease; transform:scale(1.08); }  .hero-slider img.active{ opacity:1; transform:scale(1); }  .hero-slider button{ position:absolute; top:50%; transform:translateY(-50%); width:50px; height:50px; border:none; background:rgba(255,255,255,.4); backdrop-filter:blur(8px); font-size:30px; cursor:pointer; border-radius:50%; z-index:100; }  #prev{ left:15px; }  #next{ right:15px; }  .hero-slider button:hover{ background:white; }  @media(max-width:768px){  .hero-slider{  height:320px;  }  .hero-slider button{  width:40px;  height:40px;  font-size:22px;  }  }
-JavaScript (</body> se pehle)
-<script>  const slider=document.querySelectorAll(".hero-slider img");  let index=0;  function showSlide(i){  slider.forEach(s=>s.classList.remove("active"));  slider[i].classList.add("active");  }  function nextSlide(){  index++;  if(index>=slider.length){  index=0;  }  showSlide(index);  }  function prevSlide(){  index--;  if(index<0){  index=slider.length-1;  }  showSlide(index);  }  document.getElementById("next").onclick=nextSlide;  document.getElementById("prev").onclick=prevSlide;  setInterval(nextSlide,3500);  </script>
-⚠️ Ek aur baat
-Aapke image names me spaces aur brackets hain (1 (1).jpeg). Ye GitHub Pages par kabhi-kabhi issue create karte hain. Agar possible ho to images ko rename kar dijiye:
-1-1.jpeg 1-2.jpeg 1-3.jpeg ... home.jpeg prof-shushila-maam.png
-Agar aap Apple/Netflix style premium hero slider chahte hain (text overlay, dots, thumbnails, zoom animation, swipe support aur modern effects ke saath), to wo bhi bana sakta hoon.
-
-
-Pasted text(3).txt
-Document
-isasko sudharo home page ki galary auto responsive and best do do pura without skip any content   
-
-
-Main kar sakta hoon, lekin mujhe aapki index.html file ka actual code chahiye.
-Abhi mujhe sirf aapka message dikh raha hai—index.html ka content upload nahi hua hai. Isliye main bina code dekhe usko modify karke "without skipping any content" version nahi de sakta.
-Ye karein:
-index.html file upload karein (ya ZIP project upload karein).
-Main usi file ko edit karke wapas dunga.
-Main ye sab karunga:
-✅ Aapka existing content bilkul nahi hataunga
-✅ Home page par premium responsive auto gallery slider add karunga
-✅ 28 images automatically use hongi
-✅ Auto slide + Previous/Next buttons
-✅ Dots indicator
-✅ Touch swipe (mobile)
-✅ Hover par pause
-✅ Smooth fade + zoom animation
-✅ Fast loading (lazy loading)
-✅ GitHub Pages compatible
-✅ Mobile, tablet aur desktop responsive
-✅ SEO aur performance ko bhi improve karunga
-Bas index.html upload kar dijiye, phir main aapko complete modified file dunga jise aap seedha GitHub me replace kar denge.
-
-<!DOCTYPE html>
-<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde</title> <meta name="description" content="Peace Yoga Academy offers Yoga Alliance USA certified 200-Hour Teacher Training and Pranayama Coach courses, taught by Master Krushna Tonde — classical yoga rooted in tradition, with a modern scientific approach."> <meta name="keywords" content="Peace Yoga Academy, Krushna Tonde, 200 hour yoga teacher training, pranayama coach course, yoga alliance USA, yoga teacher training India"> <meta name="robots" content="index, follow"> <meta name="author" content="Peace Yoga Academy"> <link rel="canonical" href="https://navghare4217-boop.github.io/peaceyoga/"> <meta property="og:type" content="website"> <meta property="og:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde"> <meta property="og:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach. Yoga Alliance USA certified courses by Master Krushna Tonde."> <meta property="og:url" content="https://navghare4217-boop.github.io/peaceyoga/"> <meta property="og:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training"> <meta name="twitter:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach."> <meta name="twitter:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg"> <link rel="icon" href="images/favicon.png" type="image/png"> .hero-slider{ position:relative; width:100%; height:650px; overflow:hidden; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,.25); background:#000; }
-.hero-slider img{
-position;
-width:100%;
-height:100%;
-object-fit;
-opacity:0;
-transition 1s ease;
-transform(1.08);
-}
-.hero-slider img.active{
-opacity:1;
-transform(1);
-}
-.hero-slider button{
-position;
-top:50%;
-transform(-50%);
-width:50px;
-height:50px;
-border;
-background(255,255,255,.4);
-backdrop-filter(8px);
-font-size:30px;
-cursor;
-border-radius:50%;
-z-index:100;
-}
-#prev{
-left:15px;
-}
-#next{
-right:15px;
-}
-.hero-slider button{
-background;
-}
-@media(max-width:768px){
-.hero-slider{
-height:320px;
-}
-.hero-slider button{
-width:40px;
-height:40px;
-font-size:22px;
-}
-}
-<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Peace Yoga Academy", "founder": { "@type": "Person", "name": "Krushna Tonde" }, "url": "https://navghare4217-boop.github.io/peaceyoga/", "telephone": "+91-99222-08065", "email": "info@peaceyogaacademy.com", "address": { "@type": "PostalAddress", "addressRegion": "Maharashtra", "addressCountry": "IN" }, "sameAs": [] } </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Spectral:ital@1&display=swap" rel="stylesheet"> <style> :root{ --indigo:#1B2A45; --indigo-deep:#101A2E; --turmeric:#C6892E; --turmeric-soft:#E0AA5C; --sand:#EFE6D3; --sand-light:#F8F3E7; --maroon:#7A3B2E; --sage:#6E7A5C; --ink:#20211D; --ink-soft:#4A4A43; --line: rgba(32,33,29,0.14); } *{box-sizing:border-box; margin:0; padding:0;} html{scroll-behavior:smooth;} body{ background:var(--sand-light); color:var(--ink); font-family:'Work Sans', sans-serif; font-weight:400; line-height:1.6; overflow-x:hidden; } h1,h2,h3,h4{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; color:var(--indigo); } a{color:inherit; text-decoration:none;} img{max-width:100%; display:block;} .eyebrow{ font-family:'Work Sans', sans-serif; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.22em; color:var(--turmeric); font-weight:600; } .wrap{max-width:1140px; margin:0 auto; padding:0 32px;} :focus-visible{outline:2px solid var(--turmeric); outline-offset:3px;}
-/* ---------- NAV ---------- */
-header{
-position; top:0; left:0; right:0; z-index:50;
-background(248,243,231,0.86);
-backdrop-filter(10px);
-border-bottom:1px solid var(--line);
-}
-nav{
-max-width:1140px; margin:0 auto; padding:16px 32px;
-display; align-items; justify-content;
-}
-.brand{display; align-items; gap:10px; font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color(--indigo);}
-.brand svg{width:30px; height:30px;}
-.nav-links{display; gap:32px; font-size:0.92rem; font-weight:500;}
-.nav-links a{position; padding:4px 0; color(--ink-soft); transition .25s;}
-.nav-links a{color(--turmeric);}
-.nav-cta{
-background(--indigo); color(--sand-light); padding:10px 22px;
-border-radius:2px; font-size:0.85rem; font-weight:600; letter-spacing:0.03em;
-transition .25s;
-}
-.nav-cta{background(--turmeric); color(--indigo-deep);}
-.nav-toggle{display; flex-direction; gap:5px; cursor; background; border;}
-.nav-toggle span{width:24px; height:2px; background(--indigo);}
-/* ---------- HERO ---------- */
-.hero{
-position;
-min-height:100vh;
-display; align-items;
-padding:140px 0 80px;
-background:
-radial-gradient(ellipse at 78% 20%, rgba(198,137,46,0.16), transparent 55%),
-linear-gradient(180deg, var(--sand-light) 0%, var(--sand) 100%);
-overflow;
-}
-.hero-grid{
-display; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items;
-}
-.hero .eyebrow{margin-bottom:18px;}
-.hero h1{
-font-size(2.4rem, 4.6vw, 3.6rem);
-line-height:1.08;
-margin-bottom:24px;
-}
-.hero h1 em{font-style; color(--turmeric); font-weight:500;}
-.hero p.lead{
-font-size:1.08rem; color(--ink-soft); max-width:480px; margin-bottom:34px;
-}
-.hero-ctas{display; gap:16px; flex-wrap;}
-.btn-primary{
-background(--indigo); color(--sand-light); padding:15px 30px;
-font-weight:600; font-size:0.92rem; letter-spacing:0.02em; border-radius:2px;
-transition .25s, background .25s; display;
-}
-.btn-primary{background(--maroon); transform(-2px);}
-.btn-ghost{
-border:1px solid var(--indigo); color(--indigo); padding:14px 28px;
-font-weight:600; font-size:0.92rem; border-radius:2px; transition:.25s;
-}
-.btn-ghost{background(--indigo); color(--sand-light);}
-/* breathing mark */
-.breath-wrap{
-position; aspect-ratio:1/1; display; align-items; justify-content;
-}
-.breath-ring{
-position; border:1px solid var(--turmeric); border-radius:50%;
-animation 6.5s ease-in-out infinite;
-}
-.breath-ring.r1{width:60%; height:60%; animation-delay:0s; opacity:.75;}
-.breath-ring.r2{width:78%; height:78%; animation-delay:.4s; opacity:.5;}
-.breath-ring.r3{width:96%; height:96%; animation-delay:.8s; opacity:.3;}
-@keyframes breathe{
-0%,100%{transform(0.86); opacity:.25;}
-50%{transform(1); opacity:.7;}
-}
-.hero-photo{
-position; z-index:2; width:64%; aspect-ratio:3/4;
-border-radius:2px; overflow;
-box-shadow:0 30px 60px -20px rgba(16,26,46,0.35);
-background(160deg, var(--indigo), var(--indigo-deep));
-display; align-items; justify-content;
-}
-.img-placeholder{
-width:100%; height:100%; display; align-items; justify-content;
-background(160deg, var(--indigo), var(--indigo-deep));
-color(239,230,211,0.55); text-align; padding:20px; font-size:.78rem;
-letter-spacing:.05em; font-family:'Work Sans',sans-serif;
-}
-.img-placeholder.light{background(160deg, var(--sand), #E3D7BC); color(32,33,29,0.4);}
-.img-placeholder svg{width:34%; opacity:.5; margin-bottom:14px;}
-@media(min-width:0){.hero-photo .img-placeholder svg{width:64px;}}
-@media(max-width:880px){
-.hero-grid{grid-template-columns:1fr; text-align;}
-.breath-wrap{order:-1; max-width:280px; margin:0 auto 20px;}
-}
-/* ---------- SECTION SHELL ---------- */
-section{padding:110px 0;}
-.section-head{max-width:640px; margin-bottom:56px;}
-.section-head .eyebrow{margin-bottom:14px;}
-.section-head h2{font-size(1.8rem,3vw,2.5rem); line-height:1.15;}
-.rule{width:52px; height:2px; background(--turmeric); margin:22px 0;}
-/* ---------- ABOUT ---------- */
-.about-section{background(--sand-light);}
-.about-grid{display; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items;}
-.about-grid p{color(--ink-soft); margin-bottom:18px; font-size:1.02rem;}
-.about-figure{
-aspect-ratio:4/5; border-radius:2px; overflow;
-}
-@media(max-width:880px){.about-grid{grid-template-columns:1fr;} .about-figure{order:-1; max-width:340px;}}
-/* ---------- FOUNDER ---------- */
-.founder-section{
-background(--indigo);
-color(--sand-light);
-}
-.founder-section h2, .founder-section h3, .founder-section h4{color(--sand-light);}
-.founder-grid{display; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items;}
-.founder-photo{aspect-ratio:4/5; border-radius:2px; overflow; position; top:110px;}
-.founder-grid p{color(239,230,211,0.82); margin-bottom:18px;}
-.founder-badges{display; flex-wrap; gap:10px; margin:24px 0 8px;}
-.founder-badges span{
-border:1px solid rgba(224,170,92,0.5); color(--turmeric-soft);
-padding:7px 14px; font-size:0.78rem; letter-spacing:0.03em; border-radius:2px;
-}
-.quali-list{list-style; margin-top:8px;}
-.quali-list li{
-padding:12px 0; border-bottom:1px solid rgba(239,230,211,0.15);
-display; gap:12px; color(239,230,211,0.88); font-size:0.96rem;
-}
-.quali-list li::before{content:"◆"; color(--turmeric); font-size:0.6rem; margin-top:6px;}
-@media(max-width:880px){.founder-grid{grid-template-columns:1fr;} .founder-photo{position; max-width:300px;}}
-/* ---------- TIMELINE ---------- */
-.timeline-section{background(--sand);}
-.timeline{position; margin-top:20px;}
-.timeline::before{
-content:""; position; left:64px; top:8px; bottom:8px; width:1px;
-background(--line);
-}
-.t-item{display; grid-template-columns:120px 1fr; gap:20px; padding:26px 0; position;}
-.t-item .year{
-font-family:'Fraunces',serif; font-size:1.5rem; color(--turmeric); font-weight:500;
-text-align; padding-right:32px; position;
-}
-.t-item .year::after{
-content:""; position; right:-5px; top:12px; width:9px; height:9px; border-radius:50%;
-background(--turmeric); border:3px solid var(--sand);
-}
-.t-item p{color(--ink-soft); max-width:560px; padding-left:8px;}
-@media(max-width:640px){
-.timeline::before{left:38px;}
-.t-item{grid-template-columns:70px 1fr;}
-.t-item .year{font-size:1.1rem; padding-right:14px;}
-.t-item .year::after{right:-9px;}
-}
-/* ---------- STATS ---------- */
-.stats-row{
-display; grid-template-columns(4,1fr); gap:1px;
-background(--line); border:1px solid var(--line); margin-top:60px;
-}
-.stat{background(--sand-light); padding:34px 24px; text-align;}
-.stat .num{font-family:'Fraunces',serif; font-size:2.2rem; color(--maroon); font-weight:500;}
-.stat .label{font-size:0.82rem; color(--ink-soft); margin-top:6px; letter-spacing:0.02em;}
-@media(max-width:700px){.stats-row{grid-template-columns(2,1fr);}}
-/* ---------- COURSES ---------- */
-.courses-section{background(--sand-light);}
-.course-cards{display; grid-template-columns:1fr 1fr; gap:28px;}
-.course-card{
-background(--sand); border:1px solid var(--line); padding:40px 34px;
-transition .3s, box-shadow .3s;
-}
-.course-card{transform(-6px); box-shadow:0 24px 40px -24px rgba(32,33,29,0.25);}
-.course-card .eyebrow{color(--maroon);}
-.course-card h3{font-size:1.5rem; margin:12px 0 14px;}
-.course-card p{color(--ink-soft); margin-bottom:22px;}
-.course-card a{font-weight:600; font-size:0.88rem; color(--indigo); border-bottom:1px solid var(--turmeric); padding-bottom:2px;}
-@media(max-width:760px){.course-cards{grid-template-columns:1fr;}}
-/* ---------- TWO COLUMN LIST SECTION (What you get / who) ---------- */
-.split-section{background(--sand);}
-.split-grid{display; grid-template-columns:1fr 1fr; gap:60px;}
-.split-grid h3{font-size:1.3rem; margin-bottom:20px;}
-.split-grid ul{list-style;}
-.split-grid ul li{
-padding:13px 0 13px 26px; border-bottom:1px solid var(--line);
-position; color(--ink-soft); font-size:0.96rem;
-}
-.split-grid ul li::before{content:"→"; position; left:0; color(--turmeric); font-weight:600;}
-@media(max-width:820px){.split-grid{grid-template-columns:1fr; gap:36px;}}
-/* ---------- WHY CHOOSE ---------- */
-.why-section{background(--indigo-deep); color(--sand-light);}
-.why-section h2{color(--sand-light);}
-.why-grid{display; grid-template-columns(3,1fr); gap:1px; background(239,230,211,0.14); margin-top:50px; border:1px solid rgba(239,230,211,0.14);}
-.why-card{background(--indigo-deep); padding:36px 30px;}
-.why-card .mark{color(--turmeric-soft); font-family:'Fraunces',serif; font-size:1.6rem; margin-bottom:14px; display;}
-.why-card p{color(239,230,211,0.75); font-size:0.95rem;}
-@media(max-width:820px){.why-grid{grid-template-columns:1fr;}}
-/* ---------- CURRICULUM ---------- */
-.curriculum-section{background(--sand-light);}
-.curriculum-grid{display; grid-template-columns(2,1fr); gap:0; border-top:1px solid var(--line); margin-top:20px;}
-.curriculum-grid div{
-padding:22px 26px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
-color(--ink-soft); font-size:0.96rem;
-}
-.curriculum-grid div(2n){border-right;}
-@media(max-width:700px){.curriculum-grid{grid-template-columns:1fr;} .curriculum-grid div{border-right;}}
-/* ---------- FACULTY ---------- */
-.faculty-section{background(--sand);}
-.faculty-grid{display; grid-template-columns:1fr 1fr; gap:36px;}
-.faculty-card{background(--sand-light); border:1px solid var(--line);}
-.faculty-photo{aspect-ratio:4/3;}
-.faculty-body{padding:28px 30px;}
-.faculty-body h3{font-size:1.25rem; margin-bottom:6px;}
-.faculty-body .role{color(--maroon); font-size:0.82rem; font-weight:600; letter-spacing:0.02em; margin-bottom:14px; display;}
-.faculty-body p{color(--ink-soft); font-size:0.93rem;}
-@media(max-width:760px){.faculty-grid{grid-template-columns:1fr;}}
-/* ---------- TESTIMONIAL ---------- */
-.testimonial-section{background(--maroon); color(--sand-light); text-align;}
-.testimonial-section blockquote{
-font-family:'Spectral', serif; font-style; font-size(1.3rem,2.4vw,1.8rem);
-max-width:760px; margin:0 auto 20px; line-height:1.5;
-}
-.testimonial-section cite{font-style; font-size:0.85rem; letter-spacing:0.05em; color(--turmeric-soft);}
-/* ---------- CTA / CONTACT ---------- */
-.cta-section{background(--sand-light); text-align;}
-.cta-section h2{font-size(1.9rem,3.4vw,2.7rem); max-width:620px; margin:0 auto 20px;}
-.cta-section p{color(--ink-soft); max-width:480px; margin:0 auto 34px;}
-.contact-form{
-max-width:480px; margin:0 auto; text-align;
-background(--sand); border:1px solid var(--line); padding:32px;
-}
-.cf-row{display; grid-template-columns:1fr 1fr; gap:16px;}
-.cf-field{margin-bottom:18px;}
-.cf-field label{display; font-size:0.8rem; font-weight:600; color(--indigo); margin-bottom:6px; letter-spacing:0.02em;}
-.cf-field input, .cf-field textarea{
-width:100%; padding:12px 14px; border:1px solid var(--line); background(--sand-light);
-font-family:'Work Sans',sans-serif; font-size:0.92rem; color(--ink); border-radius:2px;
-}
-.cf-field input, .cf-field textarea{outline:2px solid var(--turmeric); outline-offset:1px; border-color(--turmeric);}
-@media(max-width:480px){.cf-row{grid-template-columns:1fr;} .contact-form{padding:24px 20px;}}
-footer{background(--indigo-deep); color(239,230,211,0.65); padding:60px 0 30px;}
-.footer-grid{display; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:40px;}
-footer h4{color(--sand-light); font-size:0.95rem; margin-bottom:16px;}
-footer .brand{color(--sand-light); margin-bottom:14px;}
-footer p{font-size:0.88rem; max-width:320px;}
-footer ul{list-style;}
-footer ul li{margin-bottom:10px; font-size:0.88rem;}
-footer ul li a{color(--turmeric-soft);}
-.footer-bottom{border-top:1px solid rgba(239,230,211,0.12); padding-top:24px; font-size:0.8rem; display; justify-content; flex-wrap; gap:10px;}
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr;}}
-@media(max-width:880px){
-nav{padding:14px 20px;}
-.nav-links{
-display; flex-direction; gap:0;
-position; top:100%; left:0; right:0;
-background(--sand-light); border-bottom:1px solid var(--line);
-max-height:0; overflow; transition .35s ease;
-}
-.nav-links.open{max-height:400px;}
-.nav-links a{padding:16px 20px; border-bottom:1px solid var(--line); width:100%;}
-.nav-toggle{display;}
-.nav-cta{padding:9px 16px; font-size:0.78rem;}
-.brand{font-size:1rem;}
-}
-@media(max-width:480px){
-.wrap{padding:0 20px;}
-section{padding:72px 0;}
-.hero{padding-top:110px; min-height; padding-bottom:60px;}
-.hero h1{font-size:2rem;}
-.hero-ctas a{width:100%; text-align;}
-.founder-badges span{font-size:0.72rem;}
-.stats-row{grid-template-columns:1fr 1fr;}
-.stat .num{font-size:1.7rem;}
-}
-</style>
-</head> <script>
-const slider=document.querySelectorAll(".hero-slider img");
-let index=0;
-function showSlide(i){
-slider.forEach(s=>s.classList.remove("active"));
-slider[i].classList.add("active");
-}
-function nextSlide(){
-index++;
-if(index>=slider.length){
-index=0;
-}
-showSlide(index);
-}
-function prevSlide(){
-index--;
-if(index<0){
-index=slider.length-1;
-}
-showSlide(index);
-}
-document.getElementById("next").onclick=nextSlide;
-document.getElementById("prev").onclick=prevSlide;
-setInterval(nextSlide,3500);
-</script> <body>
-<header> <nav> <a href="#top" class="brand"> <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg> Peace Yoga Academy </a> <div class="nav-links" id="navLinks"> <a href="#about">About</a> <a href="#founder">Founder</a> <a href="#courses">Courses</a> <a href="#curriculum">Curriculum</a> <a href="#faculty">Faculty</a> </div> <div style="display:flex; align-items:center; gap:14px;"> <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="nav-cta">Enquire Now</a> <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"> <span></span><span></span><span></span> </button> </div> </nav> </header>
-<main id="top">
-<!-- HERO -->
-<section class="hero"> <div class="wrap hero-grid"> <div> <p class="eyebrow">Peace Yoga Academy · Founded by Krushna Tonde</p> <h1>Classical yoga,<br>taught with <em>scientific</em> precision.</h1> <p class="lead">A holistic yoga program for individuals, groups and companies — everywhere. Pranayama, asana and dhyana, taught in the tradition of classical yoga and grounded in a modern, scientific approach.</p> <div class="hero-ctas"> <a href="#courses" class="btn-primary">Explore Courses</a> <a href="#founder" class="btn-ghost">Meet the Founder</a> </div> </div> <div class="hero-slider">
-<img src="images/1 (1).jpeg" class="active"> <img src="images/1 (2).jpeg"> <img src="images/1 (3).jpeg"> <img src="images/1 (4).jpeg"> <img src="images/1 (5).jpeg"> <img src="images/1 (6).jpeg"> <img src="images/1 (7).jpeg"> <img src="images/1 (9).jpeg"> <img src="images/1 (10).jpeg"> <img src="images/1 (11).jpeg"> <img src="images/1 (12).jpeg"> <img src="images/1 (13).jpeg"> <img src="images/1 (14).jpeg"> <img src="images/1 (15).jpeg"> <img src="images/1 (16).jpeg"> <img src="images/1 (17).jpeg"> <img src="images/1 (18).jpeg"> <img src="images/1 (19).jpeg"> <img src="images/1 (20).jpeg"> <img src="images/1 (21).jpeg"> <img src="images/1 (22).jpeg"> <img src="images/1 (23).jpeg"> <img src="images/1 (25).jpeg"> <img src="images/1 (26).jpeg"> <img src="images/1 (27).jpeg"> <img src="images/222.jpeg"> <img src="images/home.jpeg"> <img src="images/Prof. shushila maam.png">  <button id="prev">&#10094;</button> <button id="next">&#10095;</button>
-</div> <div class="breath-wrap"> <div class="breath-ring r1"></div> <div class="breath-ring r2"></div> <div class="breath-ring r3"></div> <div class="hero-photo"> <img src="images/home.JPG" alt="Krushna Tonde, Founder of Peace Yoga Academy" style="width:100%; height:100%; object-fit:cover;"> </div> </div> </div> </section>
-<!-- ABOUT -->
-<section class="about-section" id="about"> <div class="wrap about-grid"> <div class="about-figure"> <img src="images/founder.JPG" alt="Peace Yoga Academy studio and class" style="width:100%; height:100%; object-fit:cover;"> </div> <div> <p class="eyebrow">About Us</p> <h2>Traditional roots, a modern approach.</h2> <div class="rule"></div> <p>We are committed to providing a holistic yoga program for individuals, groups and companies — everywhere. What sets us apart is a yoga curriculum rooted in the tradition of classical yoga, combined with a modern, scientific approach.</p> <p>Our classes offer an authentic experience composed of pranayama (breathwork), asana (posture) and dhyana (meditation), delivered across a range of yoga themes, with proper skill and technique at the centre of every session.</p> </div> </div> </section>
-<!-- FOUNDER -->
-<section class="founder-section" id="founder"> <div class="wrap founder-grid"> <div class="founder-photo"> <img src="images/about.JPG" alt="Krushna Tonde, Founder of Peace Yoga Academy" style="width:100%; height:100%; object-fit:cover;"> </div> <div> <p class="eyebrow">Meet the Founder</p> <h2>Master Krushna Tonde</h2> <div class="rule"></div> <p>Founder of Peace Yoga Academy and a highly accomplished Yoga Master with over 15 years of dedicated experience in teaching and promoting authentic yoga. His mission is to inspire individuals toward physical health, mental well-being and holistic living, through traditional yogic practice combined with a scientific approach.</p> <p>He is an Authorized National Yogasana Coach certified by Yogasanabharat and NS NIS Patiala, where he secured First Rank among 140 national yoga coaches. He also serves as the Indian Ambassador of Yogasana to Europe and is an International Authorized Yogasana Coach, actively promoting Yogasana on global platforms.</p> <p>Beyond yoga, he holds a 1st DAN Black Belt in Taekwondo — a reflection of the discipline and physical fitness he brings to his teaching. Through his philosophy of tradition meeting modern science, he has trained more than 2,500 students, helping them build strength, flexibility, confidence and lifelong well-being.</p>
-    <h4 style="margin-top:36px; font-size:1rem; color:var(--turmeric-soft);">Academic &amp; Professional Qualifications</h4>     <ul class="quali-list">       <li>Master of Arts (M.A.) in Yoga (Yogashastra)</li>       <li>International Certified Advanced Yoga Teacher</li>       <li>RYT 500 Certified by Yoga Alliance USA</li>       <li>Authorised National &amp; World Coach, Yogasanabharat</li>     </ul>   </div> </div>
-</section>
-<!-- TIMELINE -->
-<section class="timeline-section" id="achievements"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Major Achievements</p> <h2>A decade of milestones, on and off the mat.</h2> </div> <div class="timeline"> <div class="t-item"> <div class="year">2023</div> <p>Honoured with the prestigious Marathwada Bhushan Award during the 75th Azadi Ka Amrit Mahotsav, in recognition of his outstanding contribution to the field of yoga.</p> </div> <div class="t-item"> <div class="year">2024</div> <p>Trained 150 national yoga coaches at NS NIS Patiala — the Sports Authority of India, Punjab.</p> </div> <div class="t-item"> <div class="year">2025</div> <p>Played a significant role in creating yoga history, contributing to 12 Guinness World Records achieved in Bengaluru.</p> </div> <div class="t-item"> <div class="year">2026</div> <p>Served as an International Authorized Yogasana Coach for participants from Armenia and the Netherlands at the 1st World Yogasana Championship, held in Ahmedabad.</p> </div> </div>
-  <div class="stats-row">     <div class="stat"><div class="num">15+</div><div class="label">Years of experience</div></div>     <div class="stat"><div class="num">2,500+</div><div class="label">Students trained</div></div>     <div class="stat"><div class="num">140</div><div class="label">Coaches ranked among — 1st</div></div>     <div class="stat"><div class="num">12</div><div class="label">Guinness World Records</div></div>   </div> </div>
-</section>
-<!-- COURSES -->
-<section class="courses-section" id="courses"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Our Courses</p> <h2>Transform your passion into a career.</h2> </div> <div class="course-cards"> <div class="course-card"> <p class="eyebrow">Certification</p> <h3>200 Hour Teacher Training Course</h3> <p>Become a certified yoga teacher and deepen your own practice and knowledge, guided directly by Master Krushna Tonde. Yoga Alliance USA (RYT 200) certified.</p> <a href="#contact">Enquire about this course →</a> </div> <div class="course-card"> <p class="eyebrow">Certification</p> <h3>Pranayama Coach Course</h3> <p>Become a certified pranayama coach and learn the essential principles, practices and benefits of pranayama, taught with classical and scientific grounding.</p> <a href="#contact">Enquire about this course →</a> </div> </div> </div> </section>
-<!-- WHAT YOU GET / WHO SHOULD ATTEND -->
-<section class="split-section"> <div class="wrap split-grid"> <div> <h3>What you get in our Yoga Teacher Training Course</h3> <ul> <li>In-depth knowledge and practice of yoga asanas, pranayama, meditation and yoga philosophy</li> <li>An introduction to the Bhagavad Gita and Patanjali's Yoga Sutras</li> <li>The skills and confidence to become a compassionate yoga teacher</li> <li>Daily interactive classes, recorded modules and self-paced lessons for flexibility</li> <li>Teaching opportunities immediately after graduation</li> <li>Personalised attention from founder Krushna Tonde and the Peace Yoga Academy team</li> </ul> </div> <div> <h3>Who should attend this course?</h3> <ul> <li>Those who want to deepen their knowledge of yoga</li> <li>Those passionate about spreading wellness and peace</li> <li>Those pursuing a career as a certified yoga teacher</li> <li>Those seeking a structured course with personal guidance</li> <li>Those who want to join a thriving teaching community</li> </ul> </div> </div> </section>
-<!-- WHY CHOOSE -->
-<section class="why-section"> <div class="wrap"> <div class="section-head"> <p class="eyebrow" style="color:var(--turmeric-soft);">Why Peace Yoga Academy</p> <h2>Planned, systematic, complete.</h2> </div> <div class="why-grid"> <div class="why-card"> <span class="mark">70 / 30</span> <p>Practical yoga technique is weighted at 70%, theory — yoga history and philosophy — at 30%, so training stays grounded in real practice.</p> </div> <div class="why-card"> <span class="mark">Global</span> <p>A course designed to let you teach both locally in India and globally, backed by Yoga Alliance USA certification.</p> </div> <div class="why-card"> <span class="mark">Anatomy</span> <p>Anatomy and physiology, often difficult to grasp, are taught in a simple and effective way by teachers who live classical yoga daily.</p> </div> </div> </div> </section>
-<!-- CURRICULUM -->
-<section class="curriculum-section" id="curriculum"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Curriculum</p> <h2>What the 200-hour course covers.</h2> </div> <div class="curriculum-grid"> <div>Anatomy and physiology — theory and practice</div> <div>Pranayama and Shatkarma (cleansing techniques)</div> <div>Advanced asana classes — backbending, hip opening, arm balancing</div> <div>Sun salutation and its variations</div> <div>Common traditional asana alignment</div> <div>Teaching methodology — class design, sequencing, preparation</div> <div>Class themes — Hatha, Beginner, Ananda, Body Opening and more</div> <div>Teaching with props — block, strap, wall</div> <div>Classroom skills and building class topics</div> <div>Alignment skills for members of all levels</div> </div> </div> </section>
-<!-- FACULTY -->
-<section class="faculty-section" id="faculty"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Our Teaching Faculty</p> <h2>Learn from teachers who live this daily.</h2> </div> <div class="faculty-grid"> <div class="faculty-card"> <div class="faculty-photo"><img src="images/home.JPG" alt="Krushna Tonde" style="width:100%; height:100%; object-fit:cover;"></div> <div class="faculty-body"> <h3>Krushna Tonde</h3> <span class="role">RYT 500 · Yoga Alliance USA · 1st DAN Taekwondo Black Belt</span> <p>Internationally certified advanced yoga teacher (Hanoi, Vietnam) with more than a decade of teaching experience. His style blends traditional Indian yoga practice with a modern approach, including the use of props.</p> </div> </div> <div class="faculty-card"> <div class="faculty-photo"><img src="images/home.JPG" alt="Prof. Sushila Banswal" style="width:100%; height:100%; object-fit:cover;"></div> <div class="faculty-body"> <h3>Prof. Sushila Banswal</h3> <span class="role">Brahmacharini Ananya Chaitanya · Resident Acharya, Chinmaya Mission Guwahati</span> <p>A disciple of Pujya Swami Abhedanandaji, disciple of Swami Chinmayananda, who is in-charge of Chinmaya Mission South Africa.</p> </div> </div> </div> </div> </section>
-<!-- TESTIMONIAL -->
-<section class="testimonial-section"> <div class="wrap"> <blockquote>"A structured, disciplined course — I left not just more flexible, but with the confidence to actually teach."</blockquote> <cite>— A 200-Hour TTC Graduate</cite> </div> </section>
-<!-- CTA -->
-<section class="cta-section" id="contact"> <div class="wrap"> <p class="eyebrow">Contact Us</p> <h2>Begin your journey into classical yoga.</h2> <p>Write to us to know more about upcoming batches for the 200-Hour Teacher Training Course and the Pranayama Coach Course.</p> <div class="hero-ctas" style="justify-content:center; margin-bottom:56px;"> <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="btn-primary">WhatsApp Us — +91 99222 08065</a> <a href="mailto:info@peaceyogaacademy.com" class="btn-ghost">Get in Touch</a> </div>
-  <form id="contactForm" class="contact-form">     <div class="cf-row">       <div class="cf-field">         <label for="cf-name">Name</label>         <input type="text" id="cf-name" name="name" required placeholder="Your full name">       </div>       <div class="cf-field">         <label for="cf-phone">Phone</label>         <input type="tel" id="cf-phone" name="phone" required placeholder="+91 XXXXX XXXXX">       </div>     </div>     <div class="cf-field">       <label for="cf-message">Message</label>       <textarea id="cf-message" name="message" rows="3" placeholder="Which course are you interested in?"></textarea>     </div>     <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send via WhatsApp</button>   </form> </div>
-</section>
-</main>
-<footer> <div class="wrap"> <div class="footer-grid"> <div> <a href="#top" class="brand" style="display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;"> <svg viewBox="0 0 40 40" width="26" height="26" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg> Peace Yoga Academy </a> <p>A holistic yoga program for individuals, groups and companies, rooted in classical tradition and modern science.</p> </div> <div> <h4>Explore</h4> <ul> <li><a href="#about">About</a></li> <li><a href="#founder">Founder</a></li> <li><a href="#courses">Courses</a></li> <li><a href="#curriculum">Curriculum</a></li> </ul> </div> <div> <h4>Contact</h4> <ul> <li>info@peaceyogaacademy.com</li> <li>Maharashtra, India</li> </ul> </div> </div> <div class="footer-bottom"> <span>© 2026 Peace Yoga Academy. All rights reserved.</span> <span>Founded by Master Krushna Tonde</span> </div> </div> </footer>
-<script> // mobile nav toggle const navToggle = document.getElementById('navToggle'); const navLinks = document.getElementById('navLinks'); navToggle.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen); }); navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); })); // contact form -> sends via WhatsApp (no backend needed on GitHub Pages) const form = document.getElementById('contactForm'); if (form) { form.addEventListener('submit', function (e) { e.preventDefault(); const name = document.getElementById('cf-name').value.trim(); const phone = document.getElementById('cf-phone').value.trim(); const msg = document.getElementById('cf-message').value.trim(); const text = Hi, I'm ${name} (${phone}). ${msg}; const url = https://wa.me/919922208065?text=${encodeURIComponent(text)}; window.open(url, '_blank'); }); } </script>
-</body> </html>
-Close
-
-
-The message you submitted was too long, please edit it and resubmit.
-
-
-Retry
-
-<!DOCTYPE html>
-
-<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde</title> <meta name="description" content="Peace Yoga Academy offers Yoga Alliance USA certified 200-Hour Teacher Training and Pranayama Coach courses, taught by Master Krushna Tonde — classical yoga rooted in tradition, with a modern scientific approach."> <meta name="keywords" content="Peace Yoga Academy, Krushna Tonde, 200 hour yoga teacher training, pranayama coach course, yoga alliance USA, yoga teacher training India"> <meta name="robots" content="index, follow"> <meta name="author" content="Peace Yoga Academy"> <link rel="canonical" href="https://navghare4217-boop.github.io/peaceyoga/"> <meta property="og:type" content="website"> <meta property="og:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training by Krushna Tonde"> <meta property="og:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach. Yoga Alliance USA certified courses by Master Krushna Tonde."> <meta property="og:url" content="https://navghare4217-boop.github.io/peaceyoga/"> <meta property="og:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Peace Yoga Academy | 200-Hour Yoga Teacher Training"> <meta name="twitter:description" content="Classical yoga teacher training rooted in tradition, taught with a modern scientific approach."> <meta name="twitter:image" content="https://navghare4217-boop.github.io/peaceyoga/images/og-cover.jpg"> <link rel="icon" href="images/favicon.png" type="image/png"> .hero-slider{ position:relative; width:100%; height:650px; overflow:hidden; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,.25); background:#000; }
-
-.hero-slider img{
-position;
-width:100%;
-height:100%;
-object-fit;
-opacity:0;
-transition 1s ease;
-transform(1.08);
-}
-
-.hero-slider img.active{
-opacity:1;
-transform(1);
-}
-
-.hero-slider button{
-position;
-top:50%;
-transform(-50%);
-width:50px;
-height:50px;
-border;
-background(255,255,255,.4);
-backdrop-filter(8px);
-font-size:30px;
-cursor;
-border-radius:50%;
-z-index:100;
-}
-
-#prev{
-left:15px;
-}
-
-#next{
-right:15px;
-}
-
-.hero-slider button{
-background;
-}
-
-@media(max-width:768px){
-
-.hero-slider{
-
-height:320px;
-
-}
-
-.hero-slider button{
-
-width:40px;
-
-height:40px;
-
-font-size:22px;
-
-}
-
-}
-
-<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Peace Yoga Academy", "founder": { "@type": "Person", "name": "Krushna Tonde" }, "url": "https://navghare4217-boop.github.io/peaceyoga/", "telephone": "+91-99222-08065", "email": "info@peaceyogaacademy.com", "address": { "@type": "PostalAddress", "addressRegion": "Maharashtra", "addressCountry": "IN" }, "sameAs": [] } </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Spectral:ital@1&display=swap" rel="stylesheet"> <style> :root{ --indigo:#1B2A45; --indigo-deep:#101A2E; --turmeric:#C6892E; --turmeric-soft:#E0AA5C; --sand:#EFE6D3; --sand-light:#F8F3E7; --maroon:#7A3B2E; --sage:#6E7A5C; --ink:#20211D; --ink-soft:#4A4A43; --line: rgba(32,33,29,0.14); } *{box-sizing:border-box; margin:0; padding:0;} html{scroll-behavior:smooth;} body{ background:var(--sand-light); color:var(--ink); font-family:'Work Sans', sans-serif; font-weight:400; line-height:1.6; overflow-x:hidden; } h1,h2,h3,h4{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; color:var(--indigo); } a{color:inherit; text-decoration:none;} img{max-width:100%; display:block;} .eyebrow{ font-family:'Work Sans', sans-serif; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.22em; color:var(--turmeric); font-weight:600; } .wrap{max-width:1140px; margin:0 auto; padding:0 32px;} :focus-visible{outline:2px solid var(--turmeric); outline-offset:3px;}
-
-/* ---------- NAV ---------- */
-header{
-position; top:0; left:0; right:0; z-index:50;
-background(248,243,231,0.86);
-backdrop-filter(10px);
-border-bottom:1px solid var(--line);
-}
-nav{
-max-width:1140px; margin:0 auto; padding:16px 32px;
-display; align-items; justify-content;
-}
-.brand{display; align-items; gap:10px; font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color(--indigo);}
-.brand svg{width:30px; height:30px;}
-.nav-links{display; gap:32px; font-size:0.92rem; font-weight:500;}
-.nav-links a{position; padding:4px 0; color(--ink-soft); transition .25s;}
-.nav-links a{color(--turmeric);}
-.nav-cta{
-background(--indigo); color(--sand-light); padding:10px 22px;
-border-radius:2px; font-size:0.85rem; font-weight:600; letter-spacing:0.03em;
-transition .25s;
-}
-.nav-cta{background(--turmeric); color(--indigo-deep);}
-.nav-toggle{display; flex-direction; gap:5px; cursor; background; border;}
-.nav-toggle span{width:24px; height:2px; background(--indigo);}
-
-/* ---------- HERO ---------- */
-.hero{
-position;
-min-height:100vh;
-display; align-items;
-padding:140px 0 80px;
-background:
-radial-gradient(ellipse at 78% 20%, rgba(198,137,46,0.16), transparent 55%),
-linear-gradient(180deg, var(--sand-light) 0%, var(--sand) 100%);
-overflow;
-}
-.hero-grid{
-display; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items;
-}
-.hero .eyebrow{margin-bottom:18px;}
-.hero h1{
-font-size(2.4rem, 4.6vw, 3.6rem);
-line-height:1.08;
-margin-bottom:24px;
-}
-.hero h1 em{font-style; color(--turmeric); font-weight:500;}
-.hero p.lead{
-font-size:1.08rem; color(--ink-soft); max-width:480px; margin-bottom:34px;
-}
-.hero-ctas{display; gap:16px; flex-wrap;}
-.btn-primary{
-background(--indigo); color(--sand-light); padding:15px 30px;
-font-weight:600; font-size:0.92rem; letter-spacing:0.02em; border-radius:2px;
-transition .25s, background .25s; display;
-}
-.btn-primary{background(--maroon); transform(-2px);}
-.btn-ghost{
-border:1px solid var(--indigo); color(--indigo); padding:14px 28px;
-font-weight:600; font-size:0.92rem; border-radius:2px; transition:.25s;
-}
-.btn-ghost{background(--indigo); color(--sand-light);}
-
-/* breathing mark */
-.breath-wrap{
-position; aspect-ratio:1/1; display; align-items; justify-content;
-}
-.breath-ring{
-position; border:1px solid var(--turmeric); border-radius:50%;
-animation 6.5s ease-in-out infinite;
-}
-.breath-ring.r1{width:60%; height:60%; animation-delay:0s; opacity:.75;}
-.breath-ring.r2{width:78%; height:78%; animation-delay:.4s; opacity:.5;}
-.breath-ring.r3{width:96%; height:96%; animation-delay:.8s; opacity:.3;}
-@keyframes breathe{
-0%,100%{transform(0.86); opacity:.25;}
-50%{transform(1); opacity:.7;}
-}
-.hero-photo{
-position; z-index:2; width:64%; aspect-ratio:3/4;
-border-radius:2px; overflow;
-box-shadow:0 30px 60px -20px rgba(16,26,46,0.35);
-background(160deg, var(--indigo), var(--indigo-deep));
-display; align-items; justify-content;
-}
-.img-placeholder{
-width:100%; height:100%; display; align-items; justify-content;
-background(160deg, var(--indigo), var(--indigo-deep));
-color(239,230,211,0.55); text-align; padding:20px; font-size:.78rem;
-letter-spacing:.05em; font-family:'Work Sans',sans-serif;
-}
-.img-placeholder.light{background(160deg, var(--sand), #E3D7BC); color(32,33,29,0.4);}
-.img-placeholder svg{width:34%; opacity:.5; margin-bottom:14px;}
-@media(min-width:0){.hero-photo .img-placeholder svg{width:64px;}}
-
-@media(max-width:880px){
-.hero-grid{grid-template-columns:1fr; text-align;}
-.breath-wrap{order:-1; max-width:280px; margin:0 auto 20px;}
-}
-
-/* ---------- SECTION SHELL ---------- */
-section{padding:110px 0;}
-.section-head{max-width:640px; margin-bottom:56px;}
-.section-head .eyebrow{margin-bottom:14px;}
-.section-head h2{font-size(1.8rem,3vw,2.5rem); line-height:1.15;}
-.rule{width:52px; height:2px; background(--turmeric); margin:22px 0;}
-
-/* ---------- ABOUT ---------- */
-.about-section{background(--sand-light);}
-.about-grid{display; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items;}
-.about-grid p{color(--ink-soft); margin-bottom:18px; font-size:1.02rem;}
-.about-figure{
-aspect-ratio:4/5; border-radius:2px; overflow;
-}
-@media(max-width:880px){.about-grid{grid-template-columns:1fr;} .about-figure{order:-1; max-width:340px;}}
-
-/* ---------- FOUNDER ---------- */
-.founder-section{
-background(--indigo);
-color(--sand-light);
-}
-.founder-section h2, .founder-section h3, .founder-section h4{color(--sand-light);}
-.founder-grid{display; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items;}
-.founder-photo{aspect-ratio:4/5; border-radius:2px; overflow; position; top:110px;}
-.founder-grid p{color(239,230,211,0.82); margin-bottom:18px;}
-.founder-badges{display; flex-wrap; gap:10px; margin:24px 0 8px;}
-.founder-badges span{
-border:1px solid rgba(224,170,92,0.5); color(--turmeric-soft);
-padding:7px 14px; font-size:0.78rem; letter-spacing:0.03em; border-radius:2px;
-}
-.quali-list{list-style; margin-top:8px;}
-.quali-list li{
-padding:12px 0; border-bottom:1px solid rgba(239,230,211,0.15);
-display; gap:12px; color(239,230,211,0.88); font-size:0.96rem;
-}
-.quali-list li::before{content:"◆"; color(--turmeric); font-size:0.6rem; margin-top:6px;}
-@media(max-width:880px){.founder-grid{grid-template-columns:1fr;} .founder-photo{position; max-width:300px;}}
-
-/* ---------- TIMELINE ---------- */
-.timeline-section{background(--sand);}
-.timeline{position; margin-top:20px;}
-.timeline::before{
-content:""; position; left:64px; top:8px; bottom:8px; width:1px;
-background(--line);
-}
-.t-item{display; grid-template-columns:120px 1fr; gap:20px; padding:26px 0; position;}
-.t-item .year{
-font-family:'Fraunces',serif; font-size:1.5rem; color(--turmeric); font-weight:500;
-text-align; padding-right:32px; position;
-}
-.t-item .year::after{
-content:""; position; right:-5px; top:12px; width:9px; height:9px; border-radius:50%;
-background(--turmeric); border:3px solid var(--sand);
-}
-.t-item p{color(--ink-soft); max-width:560px; padding-left:8px;}
-@media(max-width:640px){
-.timeline::before{left:38px;}
-.t-item{grid-template-columns:70px 1fr;}
-.t-item .year{font-size:1.1rem; padding-right:14px;}
-.t-item .year::after{right:-9px;}
-}
-
-/* ---------- STATS ---------- */
-.stats-row{
-display; grid-template-columns(4,1fr); gap:1px;
-background(--line); border:1px solid var(--line); margin-top:60px;
-}
-.stat{background(--sand-light); padding:34px 24px; text-align;}
-.stat .num{font-family:'Fraunces',serif; font-size:2.2rem; color(--maroon); font-weight:500;}
-.stat .label{font-size:0.82rem; color(--ink-soft); margin-top:6px; letter-spacing:0.02em;}
-@media(max-width:700px){.stats-row{grid-template-columns(2,1fr);}}
-
-/* ---------- COURSES ---------- */
-.courses-section{background(--sand-light);}
-.course-cards{display; grid-template-columns:1fr 1fr; gap:28px;}
-.course-card{
-background(--sand); border:1px solid var(--line); padding:40px 34px;
-transition .3s, box-shadow .3s;
-}
-.course-card{transform(-6px); box-shadow:0 24px 40px -24px rgba(32,33,29,0.25);}
-.course-card .eyebrow{color(--maroon);}
-.course-card h3{font-size:1.5rem; margin:12px 0 14px;}
-.course-card p{color(--ink-soft); margin-bottom:22px;}
-.course-card a{font-weight:600; font-size:0.88rem; color(--indigo); border-bottom:1px solid var(--turmeric); padding-bottom:2px;}
-@media(max-width:760px){.course-cards{grid-template-columns:1fr;}}
-
-/* ---------- TWO COLUMN LIST SECTION (What you get / who) ---------- */
-.split-section{background(--sand);}
-.split-grid{display; grid-template-columns:1fr 1fr; gap:60px;}
-.split-grid h3{font-size:1.3rem; margin-bottom:20px;}
-.split-grid ul{list-style;}
-.split-grid ul li{
-padding:13px 0 13px 26px; border-bottom:1px solid var(--line);
-position; color(--ink-soft); font-size:0.96rem;
-}
-.split-grid ul li::before{content:"→"; position; left:0; color(--turmeric); font-weight:600;}
-@media(max-width:820px){.split-grid{grid-template-columns:1fr; gap:36px;}}
-
-/* ---------- WHY CHOOSE ---------- */
-.why-section{background(--indigo-deep); color(--sand-light);}
-.why-section h2{color(--sand-light);}
-.why-grid{display; grid-template-columns(3,1fr); gap:1px; background(239,230,211,0.14); margin-top:50px; border:1px solid rgba(239,230,211,0.14);}
-.why-card{background(--indigo-deep); padding:36px 30px;}
-.why-card .mark{color(--turmeric-soft); font-family:'Fraunces',serif; font-size:1.6rem; margin-bottom:14px; display;}
-.why-card p{color(239,230,211,0.75); font-size:0.95rem;}
-@media(max-width:820px){.why-grid{grid-template-columns:1fr;}}
-
-/* ---------- CURRICULUM ---------- */
-.curriculum-section{background(--sand-light);}
-.curriculum-grid{display; grid-template-columns(2,1fr); gap:0; border-top:1px solid var(--line); margin-top:20px;}
-.curriculum-grid div{
-padding:22px 26px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
-color(--ink-soft); font-size:0.96rem;
-}
-.curriculum-grid div(2n){border-right;}
-@media(max-width:700px){.curriculum-grid{grid-template-columns:1fr;} .curriculum-grid div{border-right;}}
-
-/* ---------- FACULTY ---------- */
-.faculty-section{background(--sand);}
-.faculty-grid{display; grid-template-columns:1fr 1fr; gap:36px;}
-.faculty-card{background(--sand-light); border:1px solid var(--line);}
-.faculty-photo{aspect-ratio:4/3;}
-.faculty-body{padding:28px 30px;}
-.faculty-body h3{font-size:1.25rem; margin-bottom:6px;}
-.faculty-body .role{color(--maroon); font-size:0.82rem; font-weight:600; letter-spacing:0.02em; margin-bottom:14px; display;}
-.faculty-body p{color(--ink-soft); font-size:0.93rem;}
-@media(max-width:760px){.faculty-grid{grid-template-columns:1fr;}}
-
-/* ---------- TESTIMONIAL ---------- */
-.testimonial-section{background(--maroon); color(--sand-light); text-align;}
-.testimonial-section blockquote{
-font-family:'Spectral', serif; font-style; font-size(1.3rem,2.4vw,1.8rem);
-max-width:760px; margin:0 auto 20px; line-height:1.5;
-}
-.testimonial-section cite{font-style; font-size:0.85rem; letter-spacing:0.05em; color(--turmeric-soft);}
-
-/* ---------- CTA / CONTACT ---------- */
-.cta-section{background(--sand-light); text-align;}
-.cta-section h2{font-size(1.9rem,3.4vw,2.7rem); max-width:620px; margin:0 auto 20px;}
-.cta-section p{color(--ink-soft); max-width:480px; margin:0 auto 34px;}
-
-.contact-form{
-max-width:480px; margin:0 auto; text-align;
-background(--sand); border:1px solid var(--line); padding:32px;
-}
-.cf-row{display; grid-template-columns:1fr 1fr; gap:16px;}
-.cf-field{margin-bottom:18px;}
-.cf-field label{display; font-size:0.8rem; font-weight:600; color(--indigo); margin-bottom:6px; letter-spacing:0.02em;}
-.cf-field input, .cf-field textarea{
-width:100%; padding:12px 14px; border:1px solid var(--line); background(--sand-light);
-font-family:'Work Sans',sans-serif; font-size:0.92rem; color(--ink); border-radius:2px;
-}
-.cf-field input, .cf-field textarea{outline:2px solid var(--turmeric); outline-offset:1px; border-color(--turmeric);}
-@media(max-width:480px){.cf-row{grid-template-columns:1fr;} .contact-form{padding:24px 20px;}}
-
-footer{background(--indigo-deep); color(239,230,211,0.65); padding:60px 0 30px;}
-.footer-grid{display; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:40px;}
-footer h4{color(--sand-light); font-size:0.95rem; margin-bottom:16px;}
-footer .brand{color(--sand-light); margin-bottom:14px;}
-footer p{font-size:0.88rem; max-width:320px;}
-footer ul{list-style;}
-footer ul li{margin-bottom:10px; font-size:0.88rem;}
-footer ul li a{color(--turmeric-soft);}
-.footer-bottom{border-top:1px solid rgba(239,230,211,0.12); padding-top:24px; font-size:0.8rem; display; justify-content; flex-wrap; gap:10px;}
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr;}}
-
-@media(max-width:880px){
-nav{padding:14px 20px;}
-.nav-links{
-display; flex-direction; gap:0;
-position; top:100%; left:0; right:0;
-background(--sand-light); border-bottom:1px solid var(--line);
-max-height:0; overflow; transition .35s ease;
-}
-.nav-links.open{max-height:400px;}
-.nav-links a{padding:16px 20px; border-bottom:1px solid var(--line); width:100%;}
-.nav-toggle{display;}
-.nav-cta{padding:9px 16px; font-size:0.78rem;}
-.brand{font-size:1rem;}
-}
-@media(max-width:480px){
-.wrap{padding:0 20px;}
-section{padding:72px 0;}
-.hero{padding-top:110px; min-height; padding-bottom:60px;}
-.hero h1{font-size:2rem;}
-.hero-ctas a{width:100%; text-align;}
-.founder-badges span{font-size:0.72rem;}
-.stats-row{grid-template-columns:1fr 1fr;}
-.stat .num{font-size:1.7rem;}
-}
-</style>
-
-</head> <script>
-
-const slider=document.querySelectorAll(".hero-slider img");
-
-let index=0;
-
-function showSlide(i){
-
-slider.forEach(s=>s.classList.remove("active"));
-
-slider[i].classList.add("active");
-
-}
-
-function nextSlide(){
-
-index++;
-
-if(index>=slider.length){
-
-index=0;
-
-}
-
-showSlide(index);
-
-}
-
-function prevSlide(){
-
-index--;
-
-if(index<0){
-
-index=slider.length-1;
-
-}
-
-showSlide(index);
-
-}
-
-document.getElementById("next").onclick=nextSlide;
-
-document.getElementById("prev").onclick=prevSlide;
-
-setInterval(nextSlide,3500);
-
-</script> <body>
-
-<header> <nav> <a href="#top" class="brand"> <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg> Peace Yoga Academy </a> <div class="nav-links" id="navLinks"> <a href="#about">About</a> <a href="#founder">Founder</a> <a href="#courses">Courses</a> <a href="#curriculum">Curriculum</a> <a href="#faculty">Faculty</a> </div> <div style="display:flex; align-items:center; gap:14px;"> <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="nav-cta">Enquire Now</a> <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"> <span></span><span></span><span></span> </button> </div> </nav> </header>
-
-<main id="top">
-
-<!-- HERO -->
-
-<section class="hero"> <div class="wrap hero-grid"> <div> <p class="eyebrow">Peace Yoga Academy · Founded by Krushna Tonde</p> <h1>Classical yoga,<br>taught with <em>scientific</em> precision.</h1> <p class="lead">A holistic yoga program for individuals, groups and companies — everywhere. Pranayama, asana and dhyana, taught in the tradition of classical yoga and grounded in a modern, scientific approach.</p> <div class="hero-ctas"> <a href="#courses" class="btn-primary">Explore Courses</a> <a href="#founder" class="btn-ghost">Meet the Founder</a> </div> </div> <div class="hero-slider">
-
-<img src="images/1 (1).jpeg" class="active">
-<img src="images/1 (2).jpeg">
-<img src="images/1 (3).jpeg">
-<img src="images/1 (4).jpeg">
-<img src="images/1 (5).jpeg">
-<img src="images/1 (6).jpeg">
-<img src="images/1 (7).jpeg">
-<img src="images/1 (9).jpeg">
-<img src="images/1 (10).jpeg">
-<img src="images/1 (11).jpeg">
-<img src="images/1 (12).jpeg">
-<img src="images/1 (13).jpeg">
-<img src="images/1 (14).jpeg">
-<img src="images/1 (15).jpeg">
-<img src="images/1 (16).jpeg">
-<img src="images/1 (17).jpeg">
-<img src="images/1 (18).jpeg">
-<img src="images/1 (19).jpeg">
-<img src="images/1 (20).jpeg">
-<img src="images/1 (21).jpeg">
-<img src="images/1 (22).jpeg">
-<img src="images/1 (23).jpeg">
-<img src="images/1 (25).jpeg">
-<img src="images/1 (26).jpeg">
-<img src="images/1 (27).jpeg">
-<img src="images/222.jpeg">
-<img src="images/home.jpeg">
-<img src="images/Prof. shushila maam.png">
-
-<button id="prev">&#10094;</button>
-<button id="next">&#10095;</button>
-</div> <div class="breath-wrap"> <div class="breath-ring r1"></div> <div class="breath-ring r2"></div> <div class="breath-ring r3"></div> <div class="hero-photo"> <img src="images/home.JPG" alt="Krushna Tonde, Founder of Peace Yoga Academy" style="width:100%; height:100%; object-fit:cover;"> </div> </div> </div> </section>
-
-<!-- ABOUT -->
-
-<section class="about-section" id="about"> <div class="wrap about-grid"> <div class="about-figure"> <img src="images/founder.JPG" alt="Peace Yoga Academy studio and class" style="width:100%; height:100%; object-fit:cover;"> </div> <div> <p class="eyebrow">About Us</p> <h2>Traditional roots, a modern approach.</h2> <div class="rule"></div> <p>We are committed to providing a holistic yoga program for individuals, groups and companies — everywhere. What sets us apart is a yoga curriculum rooted in the tradition of classical yoga, combined with a modern, scientific approach.</p> <p>Our classes offer an authentic experience composed of pranayama (breathwork), asana (posture) and dhyana (meditation), delivered across a range of yoga themes, with proper skill and technique at the centre of every session.</p> </div> </div> </section>
-
-<!-- FOUNDER -->
-
-<section class="founder-section" id="founder"> <div class="wrap founder-grid"> <div class="founder-photo"> <img src="images/about.JPG" alt="Krushna Tonde, Founder of Peace Yoga Academy" style="width:100%; height:100%; object-fit:cover;"> </div> <div> <p class="eyebrow">Meet the Founder</p> <h2>Master Krushna Tonde</h2> <div class="rule"></div> <p>Founder of Peace Yoga Academy and a highly accomplished Yoga Master with over 15 years of dedicated experience in teaching and promoting authentic yoga. His mission is to inspire individuals toward physical health, mental well-being and holistic living, through traditional yogic practice combined with a scientific approach.</p> <p>He is an Authorized National Yogasana Coach certified by Yogasanabharat and NS NIS Patiala, where he secured First Rank among 140 national yoga coaches. He also serves as the Indian Ambassador of Yogasana to Europe and is an International Authorized Yogasana Coach, actively promoting Yogasana on global platforms.</p> <p>Beyond yoga, he holds a 1st DAN Black Belt in Taekwondo — a reflection of the discipline and physical fitness he brings to his teaching. Through his philosophy of tradition meeting modern science, he has trained more than 2,500 students, helping them build strength, flexibility, confidence and lifelong well-being.</p>
-
-    <h4 style="margin-top:36px; font-size:1rem; color:var(--turmeric-soft);">Academic &amp; Professional Qualifications</h4>
-    <ul class="quali-list">
-      <li>Master of Arts (M.A.) in Yoga (Yogashastra)</li>
-      <li>International Certified Advanced Yoga Teacher</li>
-      <li>RYT 500 Certified by Yoga Alliance USA</li>
-      <li>Authorised National &amp; World Coach, Yogasanabharat</li>
-    </ul>
-  </div>
-</div>
-</section>
-
-<!-- TIMELINE -->
-
-<section class="timeline-section" id="achievements"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Major Achievements</p> <h2>A decade of milestones, on and off the mat.</h2> </div> <div class="timeline"> <div class="t-item"> <div class="year">2023</div> <p>Honoured with the prestigious Marathwada Bhushan Award during the 75th Azadi Ka Amrit Mahotsav, in recognition of his outstanding contribution to the field of yoga.</p> </div> <div class="t-item"> <div class="year">2024</div> <p>Trained 150 national yoga coaches at NS NIS Patiala — the Sports Authority of India, Punjab.</p> </div> <div class="t-item"> <div class="year">2025</div> <p>Played a significant role in creating yoga history, contributing to 12 Guinness World Records achieved in Bengaluru.</p> </div> <div class="t-item"> <div class="year">2026</div> <p>Served as an International Authorized Yogasana Coach for participants from Armenia and the Netherlands at the 1st World Yogasana Championship, held in Ahmedabad.</p> </div> </div>
-
-  <div class="stats-row">
-    <div class="stat"><div class="num">15+</div><div class="label">Years of experience</div></div>
-    <div class="stat"><div class="num">2,500+</div><div class="label">Students trained</div></div>
-    <div class="stat"><div class="num">140</div><div class="label">Coaches ranked among — 1st</div></div>
-    <div class="stat"><div class="num">12</div><div class="label">Guinness World Records</div></div>
-  </div>
-</div>
-</section>
-
-<!-- COURSES -->
-
-<section class="courses-section" id="courses"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Our Courses</p> <h2>Transform your passion into a career.</h2> </div> <div class="course-cards"> <div class="course-card"> <p class="eyebrow">Certification</p> <h3>200 Hour Teacher Training Course</h3> <p>Become a certified yoga teacher and deepen your own practice and knowledge, guided directly by Master Krushna Tonde. Yoga Alliance USA (RYT 200) certified.</p> <a href="#contact">Enquire about this course →</a> </div> <div class="course-card"> <p class="eyebrow">Certification</p> <h3>Pranayama Coach Course</h3> <p>Become a certified pranayama coach and learn the essential principles, practices and benefits of pranayama, taught with classical and scientific grounding.</p> <a href="#contact">Enquire about this course →</a> </div> </div> </div> </section>
-
-<!-- WHAT YOU GET / WHO SHOULD ATTEND -->
-
-<section class="split-section"> <div class="wrap split-grid"> <div> <h3>What you get in our Yoga Teacher Training Course</h3> <ul> <li>In-depth knowledge and practice of yoga asanas, pranayama, meditation and yoga philosophy</li> <li>An introduction to the Bhagavad Gita and Patanjali's Yoga Sutras</li> <li>The skills and confidence to become a compassionate yoga teacher</li> <li>Daily interactive classes, recorded modules and self-paced lessons for flexibility</li> <li>Teaching opportunities immediately after graduation</li> <li>Personalised attention from founder Krushna Tonde and the Peace Yoga Academy team</li> </ul> </div> <div> <h3>Who should attend this course?</h3> <ul> <li>Those who want to deepen their knowledge of yoga</li> <li>Those passionate about spreading wellness and peace</li> <li>Those pursuing a career as a certified yoga teacher</li> <li>Those seeking a structured course with personal guidance</li> <li>Those who want to join a thriving teaching community</li> </ul> </div> </div> </section>
-
-<!-- WHY CHOOSE -->
-
-<section class="why-section"> <div class="wrap"> <div class="section-head"> <p class="eyebrow" style="color:var(--turmeric-soft);">Why Peace Yoga Academy</p> <h2>Planned, systematic, complete.</h2> </div> <div class="why-grid"> <div class="why-card"> <span class="mark">70 / 30</span> <p>Practical yoga technique is weighted at 70%, theory — yoga history and philosophy — at 30%, so training stays grounded in real practice.</p> </div> <div class="why-card"> <span class="mark">Global</span> <p>A course designed to let you teach both locally in India and globally, backed by Yoga Alliance USA certification.</p> </div> <div class="why-card"> <span class="mark">Anatomy</span> <p>Anatomy and physiology, often difficult to grasp, are taught in a simple and effective way by teachers who live classical yoga daily.</p> </div> </div> </div> </section>
-
-<!-- CURRICULUM -->
-
-<section class="curriculum-section" id="curriculum"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Curriculum</p> <h2>What the 200-hour course covers.</h2> </div> <div class="curriculum-grid"> <div>Anatomy and physiology — theory and practice</div> <div>Pranayama and Shatkarma (cleansing techniques)</div> <div>Advanced asana classes — backbending, hip opening, arm balancing</div> <div>Sun salutation and its variations</div> <div>Common traditional asana alignment</div> <div>Teaching methodology — class design, sequencing, preparation</div> <div>Class themes — Hatha, Beginner, Ananda, Body Opening and more</div> <div>Teaching with props — block, strap, wall</div> <div>Classroom skills and building class topics</div> <div>Alignment skills for members of all levels</div> </div> </div> </section>
-
-<!-- FACULTY -->
-
-<section class="faculty-section" id="faculty"> <div class="wrap"> <div class="section-head"> <p class="eyebrow">Our Teaching Faculty</p> <h2>Learn from teachers who live this daily.</h2> </div> <div class="faculty-grid"> <div class="faculty-card"> <div class="faculty-photo"><img src="images/home.JPG" alt="Krushna Tonde" style="width:100%; height:100%; object-fit:cover;"></div> <div class="faculty-body"> <h3>Krushna Tonde</h3> <span class="role">RYT 500 · Yoga Alliance USA · 1st DAN Taekwondo Black Belt</span> <p>Internationally certified advanced yoga teacher (Hanoi, Vietnam) with more than a decade of teaching experience. His style blends traditional Indian yoga practice with a modern approach, including the use of props.</p> </div> </div> <div class="faculty-card"> <div class="faculty-photo"><img src="images/home.JPG" alt="Prof. Sushila Banswal" style="width:100%; height:100%; object-fit:cover;"></div> <div class="faculty-body"> <h3>Prof. Sushila Banswal</h3> <span class="role">Brahmacharini Ananya Chaitanya · Resident Acharya, Chinmaya Mission Guwahati</span> <p>A disciple of Pujya Swami Abhedanandaji, disciple of Swami Chinmayananda, who is in-charge of Chinmaya Mission South Africa.</p> </div> </div> </div> </div> </section>
-
-<!-- TESTIMONIAL -->
-
-<section class="testimonial-section"> <div class="wrap"> <blockquote>"A structured, disciplined course — I left not just more flexible, but with the confidence to actually teach."</blockquote> <cite>— A 200-Hour TTC Graduate</cite> </div> </section>
-
-<!-- CTA -->
-
-<section class="cta-section" id="contact"> <div class="wrap"> <p class="eyebrow">Contact Us</p> <h2>Begin your journey into classical yoga.</h2> <p>Write to us to know more about upcoming batches for the 200-Hour Teacher Training Course and the Pranayama Coach Course.</p> <div class="hero-ctas" style="justify-content:center; margin-bottom:56px;"> <a href="https://wa.me/919922208065?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Peace%20Yoga%20Academy%20courses." target="_blank" rel="noopener" class="btn-primary">WhatsApp Us — +91 99222 08065</a> <a href="mailto:info@peaceyogaacademy.com" class="btn-ghost">Get in Touch</a> </div>
-
-  <form id="contactForm" class="contact-form">
-    <div class="cf-row">
-      <div class="cf-field">
-        <label for="cf-name">Name</label>
-        <input type="text" id="cf-name" name="name" required placeholder="Your full name">
-      </div>
-      <div class="cf-field">
-        <label for="cf-phone">Phone</label>
-        <input type="tel" id="cf-phone" name="phone" required placeholder="+91 XXXXX XXXXX">
-      </div>
-    </div>
-    <div class="cf-field">
-      <label for="cf-message">Message</label>
-      <textarea id="cf-message" name="message" rows="3" placeholder="Which course are you interested in?"></textarea>
-    </div>
-    <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send via WhatsApp</button>
-  </form>
-</div>
-</section>
-
-</main>
-
-<footer> <div class="wrap"> <div class="footer-grid"> <div> <a href="#top" class="brand" style="display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;"> <svg viewBox="0 0 40 40" width="26" height="26" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg> Peace Yoga Academy </a> <p>A holistic yoga program for individuals, groups and companies, rooted in classical tradition and modern science.</p> </div> <div> <h4>Explore</h4> <ul> <li><a href="#about">About</a></li> <li><a href="#founder">Founder</a></li> <li><a href="#courses">Courses</a></li> <li><a href="#curriculum">Curriculum</a></li> </ul> </div> <div> <h4>Contact</h4> <ul> <li>info@peaceyogaacademy.com</li> <li>Maharashtra, India</li> </ul> </div> </div> <div class="footer-bottom"> <span>© 2026 Peace Yoga Academy. All rights reserved.</span> <span>Founded by Master Krushna Tonde</span> </div> </div> </footer>
-
-<script> // mobile nav toggle const navToggle = document.getElementById('navToggle'); const navLinks = document.getElementById('navLinks'); navToggle.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', isOpen); }); navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); })); // contact form -> sends via WhatsApp (no backend needed on GitHub Pages) const form = document.getElementById('contactForm'); if (form) { form.addEventListener('submit', function (e) { e.preventDefault(); const name = document.getElementById('cf-name').value.trim(); const phone = document.getElementById('cf-phone').value.trim(); const msg = document.getElementById('cf-message').value.trim(); const text = `Hi, I'm ${name} (${phone}). ${msg}`; const url = `https://wa.me/919922208065?text=${encodeURIComponent(text)}`; window.open(url, '_blank'); }); } </script>
-
-</body> </html>
-
-
-Close
